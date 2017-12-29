@@ -1,4 +1,4 @@
-import menuState from './menuState.ts';
+import MenuState from './MenuState.ts';
 
 import numbersSpritesPath from './assets/numbers.png';
 import childrenLogoPath from './assets/logo-children.png';
@@ -8,10 +8,8 @@ import higherImagePath from './assets/higher.png';
 import lowerImagePath from './assets/lower.png';
 import gameOverImagePath from './assets/gameover.png';
 
-const loadState = function(game) {};
-
-loadState.prototype = {
-  preload: function() {
+class LoadState extends Phaser.State {
+  preload() {
     const loadingBar = this.add.sprite(160, 240, 'loading');
     loadingBar.anchor.setTo(0.5, 0.5);
     this.load.setPreloadSprite(loadingBar);
@@ -22,12 +20,13 @@ loadState.prototype = {
     this.game.load.image('higher', higherImagePath);
     this.game.load.image('lower', lowerImagePath);
     this.game.load.image('gameover', gameOverImagePath);
-  },
-  create: function() {
-    this.game.stage.backgroundColor = '#E6E6E6';
-    this.game.state.add('GameTitle', menuState);
-    this.game.state.start('GameTitle');
-  },
-};
+  }
 
-export default loadState;
+  create() {
+    this.game.stage.backgroundColor = '#E6E6E6';
+    this.game.state.add('GameTitle', new MenuState());
+    this.game.state.start('GameTitle');
+  }
+}
+
+export default LoadState;

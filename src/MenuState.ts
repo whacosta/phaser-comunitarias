@@ -1,12 +1,10 @@
-import gameState from './gameState.ts';
+import GameState from './GameState.ts';
 import { alto, ancho } from './dimens.ts';
 
-const menuState = function(game) {
-  let navbar;
-};
+class MenuState extends Phaser.State {
+  private navbar: Phaser.Rectangle;
 
-menuState.prototype = {
-  create: function() {
+  create() {
     const gameTitle = this.game.add.sprite(ancho / 2, 50, 'logo');
     gameTitle.anchor.setTo(0.5, 0.5);
 
@@ -20,16 +18,16 @@ menuState.prototype = {
     menu.anchor.setTo(0.5, 0.5);
 
     this.navbar = new Phaser.Rectangle(0, alto - 50, ancho, 50);
-  },
+  }
 
-  render: function() {
+  render() {
     this.game.debug.geom(this.navbar, '#0404B4');
-  },
+  }
 
-  playTheGame: function() {
-    this.game.state.add('TheGame', gameState);
+  playTheGame() {
+    this.game.state.add('TheGame', new GameState());
     this.game.state.start('TheGame');
-  },
-};
+  }
+}
 
-export default menuState;
+export default MenuState;
