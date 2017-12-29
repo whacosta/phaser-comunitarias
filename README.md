@@ -1,4 +1,4 @@
-# Proyecto Comunitarias
+# Proyecto Comunitarias [![Build Status](https://travis-ci.org/GAumala/phaser-comunitarias.svg?branch=master)](https://travis-ci.org/GAumala/phaser-comunitarias)
 
 Juego realizado en Phaser.
 
@@ -23,6 +23,8 @@ Despues puedes levantar el webpack dev server para ver tus cambios en tiempo rea
 yarn start
 ```
 
+Los archivos de código fuente tienen que estar escritos en TypeScript dentro del directorio `./src` para que sean detectados por Webpack.
+
 ## Colaboración
 
 Antes de enviar un pull request, asegurate de que tu código esta debidamente formateado y que webpack logra generar el build.
@@ -35,7 +37,7 @@ yarn format
 ```
 
 
-Para revisar que el build se genera correÑ
+Para revisar que el build se genera corre:
 
 ``` bash
 yarn webpack
