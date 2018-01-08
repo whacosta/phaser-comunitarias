@@ -1,2 +1,2 @@
-export const ancho = document.documentElement.clientWidth;
-export const alto = document.documentElement.clientHeight;
+export const ancho = 1080;
+export const alto = 600;
