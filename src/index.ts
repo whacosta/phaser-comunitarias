@@ -6,7 +6,7 @@ import 'phaser';
 import BootState from './BootState.ts';
 import VideoState from './VideoState.ts';
 import GameState from './GameState.ts';
-import ClothesState from './ClothesState.ts';
+import BoyGirlState from './BoyGirlState.ts';
 import LoadState from './LoadState.ts';
 import { ancho, alto } from './dimens.ts';
 
@@ -17,8 +17,8 @@ function start() {
   game.state.add('Boot', new BootState());
   game.state.add('Preload', new LoadState());
   game.state.add('Game', new GameState());
+  game.state.add('BoyGirl', new BoyGirlState());
   game.state.add('Video', new VideoState('video1.mp4'));
-  game.state.add('Clothes', new ClothesState());
   game.state.start('Boot');
 }
 
