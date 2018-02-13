@@ -1,9 +1,6 @@
 //Minijuego de Encontrar a Aflatoun
 
 // inject global phaser variables
-import 'pixi.js';
-import 'p2';
-import 'phaser';
 
 import ImagenFondo from './assets/fondojuego.png';
 import Aflatoun from './assets/aflatoun.png';
@@ -11,12 +8,7 @@ import Sonic from './assets/sonic.png';
 import Mario from './assets/mario.png';
 import Pikachu from './assets/pikachu.jpg';
 
-const game = new Phaser.Game(1280, 720, Phaser.AUTO, 'phaser-example', {
-  preload: preload,
-  create: create,
-  update: update,
-});
-
+class EligeAflatoun extends Phaser.state{
 function preload() {
   game.load.image('imgfondo', ImagenFondo);
   game.load.image('personaje', Aflatoun);
@@ -71,3 +63,7 @@ function listenerP() {
 }
 
 function update() {}
+
+}
+
+export default EligeAflatoun;

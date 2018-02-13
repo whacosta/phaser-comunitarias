@@ -8,11 +8,7 @@ import 'phaser';
 import ImagenFondo from './assets/imagenjuego.png';
 import Aflatoun from './assets/aflatoun.png';
 
-const game = new Phaser.Game(1280, 720, Phaser.AUTO, 'phaser-example', {
-  preload: preload,
-  create: create,
-  update: update,
-});
+class EncuentraAflatoun extends Phaser.state{
 
 function preload() {
   game.load.image('imgfondo', ImagenFondo);
@@ -42,3 +38,6 @@ function listener() {
 }
 
 function update() {}
+}
+
+export default EncuentraAflatoun;

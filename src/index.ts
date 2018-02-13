@@ -7,6 +7,8 @@ import BootState from './BootState.ts';
 import VideoState from './VideoState.ts';
 import GameState from './GameState.ts';
 import LoadState from './LoadState.ts';
+import EncuentraAflatoun from './EncuentraAflatoun.ts';
+import EligeAflatoun from './EligeAflatoun.ts';
 import { ancho, alto } from './dimens.ts';
 
 function start() {
