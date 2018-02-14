@@ -1,7 +1,5 @@
 //Minijuego de Encontrar a Aflatoun
 
-// inject global phaser variables
-
 import ImagenFondo from './assets/imagenjuego.png';
 import Aflatoun from './assets/aflatoun.png';
 
