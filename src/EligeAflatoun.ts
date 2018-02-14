@@ -1,7 +1,5 @@
 //Minijuego de Encontrar a Aflatoun
 
-// inject global phaser variables
-
 import ImagenFondo from './assets/fondojuego.png';
 import Aflatoun from './assets/aflatoun.png';
 import Sonic from './assets/sonic.png';
