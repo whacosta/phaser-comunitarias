@@ -8,6 +8,8 @@ import VideoState from './VideoState.ts';
 import GameState from './GameState.ts';
 import ClothesState from './ClothesState.ts';
 import LoadState from './LoadState.ts';
+import EncuentraAflatoun from './EncuentraAflatoun.ts';
+import EligeAflatoun from './EligeAflatoun.ts';
 import { ancho, alto } from './dimens.ts';
 
 function start() {
