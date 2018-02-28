@@ -1,5 +1,3 @@
-var variableglogal;
-
 import monedaRuta from './assets/coin.png';
 import barRuta from './assets/hamburguer.png';
 import estudiandoMadre from './assets/estudiandoMadre2.png';
@@ -15,10 +13,8 @@ import numero4 from './assets/number4.png';
 import numero5 from './assets/number5.png';
 import numero6 from './assets/number6.png';
 
-//var imagen1=require('./assets/preguntando5.png');
-
 function comenzarJuegoExterno() {
-	var juegoHtml="<div id='mySidenav' class='sidenav'><a href='javascript:void(0)' class='closebtn'>&times;</a><a id='prueba' href='#'>BoyGirl</a><a href='#'>Services</a><a href='#'>Clients</a><a href='#'>Contact</a></div><div id='navBar'><div id='menu'><img></div><div id='siguienteJuego' >	<i class='fas fa-caret-right'></i></div><div id='puntaje' >0</div><div id='moneda'><img></div></div><svg id='misvg' class='contenedorSVG'><rect class='recta' draggable='false' data-imagen="+estudiandoMadre+" transform='matrix(1,0,0,1,0,0)'/><image id='imagenPrueba' class='imagenCaja'  data-ruta-imagen="+numero1+" transform='matrix(1,0,0,1,0,0)'/><rect class='recta' draggable='false' data-imagen="+estudiando+" transform='matrix(1,0,0,1,0,0)'/><image class='imagenCaja' data-ruta-imagen="+numero2+"  transform='matrix(1,0,0,1,0,0)'/><rect class='recta' draggable='false' data-imagen="+preguntando+"  transform='matrix(1,0,0,1,0,0)'/><image class='imagenCaja' data-ruta-imagen="+numero3+"  transform='matrix(1,0,0,1,0,0)'/><rect class='recta' draggable='false' data-imagen="+buenaNota+"  transform='matrix(1,0,0,1,0,0)'/><image class='imagenCaja' data-ruta-imagen="+numero4+"  transform='matrix(1,0,0,1,0,0)'/><rect class='recta' draggable='false' data-imagen="+graduado+"  transform='matrix(1,0,0,1,0,0)'/><image class='imagenCaja' data-ruta-imagen="+numero5+"  transform='matrix(1,0,0,1,0,0)'/><rect class='recta' draggable='false' data-imagen="+empresa+"  transform='matrix(1,0,0,1,0,0)'/><image class='imagenCaja' data-ruta-imagen="+numero6+" transform='matrix(1,0,0,1,0,0)'/><image class='imagenArrastrable'  draggable='true' data-ruta-imagen="+buenaNota+" transform='matrix(1,0,0,1,0,0)' /><image class='imagenArrastrable'  draggable='true'  data-ruta-imagen="+estudiando+"  transform='matrix(1,0,0,1,0,0)' /><image class='imagenArrastrable'  draggable='true'  data-ruta-imagen="+estudiandoMadre+"  transform='matrix(1,0,0,1,0,0)' /><image class='imagenArrastrable'  draggable='true'  data-ruta-imagen="+preguntando+"  transform='matrix(1,0,0,1,0,0)' /><image class='imagenArrastrable'  draggable='true'  data-ruta-imagen="+graduado+"  transform='matrix(1,0,0,1,0,0)' /><image class='imagenArrastrable'  draggable='true'  data-ruta-imagen="+empresa+"  transform='matrix(1,0,0,1,0,0)' /></svg>";
+	var juegoHtml="<div id='mySidenav' class='sidenav'><a href='javascript:void(0)' class='closebtn'>&times;</a><a id='prueba' >BoyGirl</a><a href='#'>Services</a><a href='#'>Clients</a><a href='#'>Contact</a></div><div id='navBar'><div id='menu'><img></div><div id='siguienteJuego' >	<i class='fas fa-caret-right'></i></div><div id='puntaje' >0</div><div id='moneda'><img></div></div><svg id='misvg' class='contenedorSVG'><rect class='recta' draggable='false' data-imagen="+estudiandoMadre+" transform='matrix(1,0,0,1,0,0)'/><image id='imagenPrueba' class='imagenCaja'  data-ruta-imagen="+numero1+" transform='matrix(1,0,0,1,0,0)'/><rect class='recta' draggable='false' data-imagen="+estudiando+" transform='matrix(1,0,0,1,0,0)'/><image class='imagenCaja' data-ruta-imagen="+numero2+"  transform='matrix(1,0,0,1,0,0)'/><rect class='recta' draggable='false' data-imagen="+preguntando+"  transform='matrix(1,0,0,1,0,0)'/><image class='imagenCaja' data-ruta-imagen="+numero3+"  transform='matrix(1,0,0,1,0,0)'/><rect class='recta' draggable='false' data-imagen="+buenaNota+"  transform='matrix(1,0,0,1,0,0)'/><image class='imagenCaja' data-ruta-imagen="+numero4+"  transform='matrix(1,0,0,1,0,0)'/><rect class='recta' draggable='false' data-imagen="+graduado+"  transform='matrix(1,0,0,1,0,0)'/><image class='imagenCaja' data-ruta-imagen="+numero5+"  transform='matrix(1,0,0,1,0,0)'/><rect class='recta' draggable='false' data-imagen="+empresa+"  transform='matrix(1,0,0,1,0,0)'/><image class='imagenCaja' data-ruta-imagen="+numero6+" transform='matrix(1,0,0,1,0,0)'/><image class='imagenArrastrable'  draggable='true' data-ruta-imagen="+buenaNota+" transform='matrix(1,0,0,1,0,0)' /><image class='imagenArrastrable'  draggable='true'  data-ruta-imagen="+estudiando+"  transform='matrix(1,0,0,1,0,0)' /><image class='imagenArrastrable'  draggable='true'  data-ruta-imagen="+estudiandoMadre+"  transform='matrix(1,0,0,1,0,0)' /><image class='imagenArrastrable'  draggable='true'  data-ruta-imagen="+preguntando+"  transform='matrix(1,0,0,1,0,0)' /><image class='imagenArrastrable'  draggable='true'  data-ruta-imagen="+graduado+"  transform='matrix(1,0,0,1,0,0)' /><image class='imagenArrastrable'  draggable='true'  data-ruta-imagen="+empresa+"  transform='matrix(1,0,0,1,0,0)' /></svg>";
 
 	var juegoStyle="*{margin: 0;padding: 0;}html,body{margin: 0;padding: 0;height: 100%;overflow:hidden;}#navBar{background: rgb(40, 45, 45);height: 10%;}#menu{height: 100%;float: left;cursor: pointer;}#moneda,#puntaje{float: right;height: 100%;}#moneda img{transition:0.5s;}#puntaje{color: white;text-align: center;font-size: 7vh;}#menu i{cursor: pointer;}#menu:hover{opacity: 1;}#siguienteJuego{float: left;width: 20%;height: 100%;background: rgba(0,210,0,1);margin-left:  35%;border-radius: 2px;opacity: 0;text-align: center;display: none;}#siguienteJuego:hover{cursor: pointer;}#siguienteJuego i{color:rgb(237,237,237);font-size: 10vh;}#misvg{background: rgba(20,140,220,0.6);width: 100%;height: 90%;}.grupoCaja{transition: 0.11s;}.grupoCajax{stroke:black;stroke-width:7;stroke-opacity:0.8;fill:red;fill-opacity:0.5;}.caja{stroke:black;stroke-width:7;stroke-opacity:0.8;fill:red;fill-opacity:0.5;transition: 0.3s;}.imagenCaja{opacity: 0.6;transition: 0.2s;}.imagenArrastrable{opacity: 1;}.recta{stroke:black;stroke-width:7;stroke-opacity:0.8;fill:red;fill-opacity:0.5;transition: 0.11s;}.hover{fill-opacity:0.8;fill:rgb(0,240,0);}.imagenCaja{opacity: 1;pointer-events: none;transition: 0.11s;}.rectaOcupada{stroke:black;stroke-width:7;stroke-opacity:0.8;transition: 0.11s;fill:white;fill-opacity:0.7;}.imagenEnlazada{transition: 0.2s;opacity: 1;}.imagenEnArrastre{opacity: 0.5}@keyframes example {0% {transform: scale(1);}30% {transform: scale(1.01);}70% {transform: scale(1.01);}100% {transform: scale(1);}}@keyframes girarMoneda {0% {transform: rotateY(0deg) scale(1);}50% {transform: rotateY(360deg) scale(1.3);}100% {transform: rotateY(0deg) scale(1);}}@keyframes siguienteJuegoAnimacion {0% {opacity: 0.2;}50% {opacity: 1}100% {opacity: 0.2;}}.sidenav {height: 100%;width: 0;position: fixed;z-index: 1;top: 0;left: 0;background-color: #111;overflow-x: hidden;transition: 0.5s;padding-top: 60px;}.sidenav a {padding: 8px 8px 8px 32px;text-decoration: none;font-size: 25px;color: #818181;display: block;transition: 0.3s;}.sidenav a:hover {color: #f1f1f1;}.sidenav .closebtn {position: absolute;top: 0;right: 25px;font-size: 36px;margin-left: 50px;}"
 		
@@ -60,10 +56,6 @@ function comenzarJuegoExterno() {
 	        	imagenesArrastrables[i].setAttribute("width",parseFloat(rectas[i].getAttribute("width")));
 	        	imagenesArrastrables[i].setAttribute("height",(35/100)*(misvg.getAttribute("height")));
 	        	imagenesArrastrables[i].setAttribute("href",imagenesArrastrables[i].getAttribute("data-ruta-imagen"));
-	        	
-
-	    		
-	    
 			}
 			else{
 				rectas[i].setAttribute("x",parseFloat(rectas[i-1].getAttribute("x"))+parseFloat(rectas[i-1].getAttribute("width"))+((2/100)*misvg.getAttribute("width")));
@@ -87,29 +79,26 @@ function comenzarJuegoExterno() {
 		}
 	}
 	function start() {
-		//ADAPTACION////
 		var head=document.getElementsByTagName('head')[0];
 		var divElementExternoJuego=document.createElement('div');
 		divElementExternoJuego.setAttribute('id','contenedorJuego');
 		divElementExternoJuego.style.width='100%';
 		divElementExternoJuego.style.height='100%';
-
 		divElementExternoJuego.innerHTML=juegoHtml;
-		//se esconde al canvas pero no se lo elimina
 		document.getElementsByTagName('canvas')[0].style.display='none';
 		document.getElementsByTagName('body')[0].appendChild(divElementExternoJuego);
-		//se crea el estilo necesario para contener el estilo del juego original y ser agregado al index
 		var style = document.createElement('style');
 		style.setAttribute('id','estiloJuegoExterno');
-
 		style.type = 'text/css';
+
 		if (style.styleSheet){
 		  style.styleSheet.cssText = juegoStyle;
 		} else {
 		  style.appendChild(document.createTextNode(juegoStyle));
 		}
+
 		head.appendChild(style);
-		////////////
+
 		bubble1Sound = new Audio("./bubble1.mp3");
 		bubble1SoundEnd = new Audio("./bubbleEnd1.mp3");
 		
@@ -118,7 +107,6 @@ function comenzarJuegoExterno() {
 
 	    colocarCajas();
 
-	    //document.getElementsByClassName('imagenArrastrable')[2].setAttribute('href',imagen1);
 	    moneda.style.width=window.getComputedStyle(moneda,null).getPropertyValue('height');
 	    moneda.children[0].width=(80/100)*parseFloat(window.getComputedStyle(moneda,null).getPropertyValue('height'));
 	    moneda.children[0].height=(80/100)*parseFloat(window.getComputedStyle(moneda,null).getPropertyValue('height'));
@@ -156,7 +144,6 @@ function comenzarJuegoExterno() {
 		document.body.removeChild(document.getElementById('contenedorJuego'));
 		document.getElementsByTagName('canvas')[0].style.display='block';
 		ProfesionesArrastrables.game.state.start('BoyGirl');
-		
 	}
 
 	function siguienteJuegoPhaser(e) {
@@ -166,8 +153,6 @@ function comenzarJuegoExterno() {
 		document.getElementsByTagName('canvas')[0].style.display='block';
 		ProfesionesArrastrables.game.state.start('DefinisteTuSueno');
 	}
-
-	///////// TOUCH EVENTS ///////////
 
 	function handleTouchStart(e) {
 		e.preventDefault();
@@ -195,7 +180,6 @@ function comenzarJuegoExterno() {
 		backElement=null;
 		console.log('CANCEL');
 	}
-	/////////// MOUSE EVENTS //////////
 
 	function handleMouseDown(e) {
 		if (e.target.nodeName!='svg' && e.target.getAttribute('draggable')=='true') {
@@ -214,8 +198,6 @@ function comenzarJuegoExterno() {
 	}
 	function handleMouseOver(e) {
 	}
-
-	//////////////////////////////////
 
 	function setMatrixString(a,b,c,d,e,f) {
 		return "matrix("+a+","+b+","+c+","+d+","+e+","+f+")"
@@ -340,7 +322,6 @@ function comenzarJuegoExterno() {
 				scaleCenter(backElement,1);
 				backElement=null;
 			}
-
 			var dx=offsetX-X;
 			var dy=offsetY-Y;
 			var dxNuevo=getIndexMatrix(target.getAttribute('transform'),4)+dx;
@@ -391,11 +372,9 @@ function comenzarJuegoExterno() {
 				var rectas=document.getElementsByClassName("recta");
 				puntaje.innerHTML=ocupados.length;
 				
-
 				if (rectas.length==ocupados.length) {
 						document.getElementById("siguienteJuego").style.display="block";
 						document.getElementById("siguienteJuego").style.animation="siguienteJuegoAnimacion 2s infinite";
-
 				}
 			}
 			else if (target){
@@ -403,8 +382,8 @@ function comenzarJuegoExterno() {
 				var matrix=getMatrix(target.getAttribute('transform'));
 				var newMatrix=setMatrixString(matrix[0],matrix[1],matrix[2],matrix[3],0,0);
 				target.setAttribute("draggable","false");
-				target.style.transition="0.3s";//backElements[0] es lo mismo que target
-				target.setAttribute('transform',newMatrix);//backElements[0] es lo mismo que target
+				target.style.transition="0.3s";
+				target.setAttribute('transform',newMatrix);
 				setTimeout(function(){ target2.style.transition="0s"; target2.setAttribute("draggable","true") }, 300);
 			}
 		}else if (target){
@@ -412,8 +391,8 @@ function comenzarJuegoExterno() {
 			var matrix=getMatrix(target.getAttribute('transform'));
 			var newMatrix=setMatrixString(matrix[0],matrix[1],matrix[2],matrix[3],0,0);
 			target.setAttribute("draggable","false");
-			target.style.transition="0.3s";//backElements[0] es lo mismo que target
-			target.setAttribute('transform',newMatrix);//backElements[0] es lo mismo que target
+			target.style.transition="0.3s";
+			target.setAttribute('transform',newMatrix);
 			setTimeout(function(){ target2.style.transition="0s"; target2.setAttribute("draggable","true") }, 300);
 		}
 		if (backElement) {
@@ -422,11 +401,9 @@ function comenzarJuegoExterno() {
 			scaleCenter(backElement,1);
 			backElement=null;
 		}
-
 		target=null;
 		isDragging=false;
 	}
-
 
 	function openNav() {
 	document.getElementById("mySidenav").style.width = "250px";
@@ -440,10 +417,7 @@ function comenzarJuegoExterno() {
 
 var ProfesionesArrastrables={
 	create: function () {
-		// body...
-		variableglogal=this.game.world.width;
 		comenzarJuegoExterno();
-
 	}
 }
 
