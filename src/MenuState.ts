@@ -2,8 +2,6 @@ import GameState from './GameState.ts';
 import { alto, ancho } from './dimens.ts';
 
 class MenuState extends Phaser.State {
-  private navbar: Phaser.Rectangle;
-
   create() {
     const gameTitle = this.game.add.sprite(ancho / 2, 50, 'logo');
     gameTitle.anchor.setTo(0.5, 0.5);
@@ -18,7 +16,6 @@ class MenuState extends Phaser.State {
     menu.anchor.setTo(0.5, 0.5);
     menu.scale.setTo(0.9, 0.8);
 
-    //this.navbar = new Phaser.Rectangle(0, alto - 60, ancho, 60);
     const btnAvatar = this.game.add.button(
       26,
       alto - 120,
@@ -54,36 +51,23 @@ class MenuState extends Phaser.State {
       this.btnChatAction,
       this
     );
-    //const btnAhorros = this.game.add.button( );
   }
 
-  render() {
-    //this.game.debug.geom(this.navbar, '#0404B4');
-  }
+  render() {}
 
   playTheGame() {
     this.game.state.start('BoyGirl');
   }
 
-  btnAvatarAction() {
-    console.log('Press Avatar');
-  }
+  btnAvatarAction() {}
 
-  btnChanchoAction() {
-    console.log('Press chancho');
-  }
+  btnChanchoAction() {}
 
-  btnCofreAction() {
-    console.log('Press cofre');
-  }
+  btnCofreAction() {}
 
-  btnTiendaAction() {
-    console.log('Press tienda');
-  }
+  btnTiendaAction() {}
 
-  btnChatAction() {
-    console.log('Press chat');
-  }
+  btnChatAction() {}
 }
 
 export default MenuState;

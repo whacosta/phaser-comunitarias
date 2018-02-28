@@ -16,8 +16,6 @@ import DefinisteTuSueno from './DefinisteTuSueno.ts';
 import ProfesionesArrastrables from './ProfesionesArrastrables.js';
 
 function start() {
-  const ancho = 1080;
-  const alto = 600;
   const game = new Phaser.Game(ancho, alto, Phaser.AUTO, 'game');
   game.state.add('Boot', new BootState());
   game.state.add('Preload', new LoadState());

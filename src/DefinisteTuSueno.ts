@@ -1,20 +1,18 @@
 import Espacio from './assets/espacio.png';
 
-class DefinisteTuSueño extends Phaser.State {
-  private texto;
-
+class DefinisteTuSueno extends Phaser.State {
   preload() {
     this.game.load.image('espacio', Espacio);
   }
 
   create() {
-    var espacio = this.game.add.sprite(0, 0, 'espacio');
+    const espacio = this.game.add.sprite(0, 0, 'espacio');
     espacio.width = this.world.width;
     espacio.height = this.world.height;
 
-    var margenTop = 1 / 8 * this.world.centerY;
+    const margenTop = 1 / 8 * this.world.centerY;
 
-    var style = {
+    const style = {
       font: 'bold 30pt Arial',
       fill: 'white',
       align: 'left',
@@ -22,7 +20,7 @@ class DefinisteTuSueño extends Phaser.State {
       wordWrapWidth: 98 / 100 * this.world.width,
     };
 
-    var text = this.game.add.text(
+    const text = this.game.add.text(
       this.game.world.centerX,
       margenTop,
       '¿Definiste tu sueño? No esperes más y empieza a llevarlo a la realidad. Aflatoun Habla.',
@@ -34,4 +32,4 @@ class DefinisteTuSueño extends Phaser.State {
   }
 }
 
-export default DefinisteTuSueño;
+export default DefinisteTuSueno;

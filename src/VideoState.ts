@@ -1,6 +1,6 @@
 class VideoState extends Phaser.State {
-  private videoURL: string;
-  private video: Phaser.Video;
+  private readonly videoURL: string;
+  private readonly video: Phaser.Video;
 
   constructor(videoURL: string) {
     super();
