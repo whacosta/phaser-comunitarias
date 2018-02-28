@@ -15,13 +15,15 @@ import AflatounAstronauta from './AflatounAstronauta.ts';
 import DefinisteTuSueno from './DefinisteTuSueno.ts';
 import ProfesionesArrastrables from './ProfesionesArrastrables.js';
 
+import Video1 from './assets/video1.mp4';
+
 function start() {
   const game = new Phaser.Game(ancho, alto, Phaser.AUTO, 'game');
   game.state.add('Boot', new BootState());
   game.state.add('Preload', new LoadState());
   game.state.add('Game', new GameState());
   game.state.add('BoyGirl', new BoyGirlState());
-  game.state.add('Video', new VideoState('video1.mp4'));
+  game.state.add('Video', new VideoState(Video1));
   game.state.add('AflatounAstronauta', new AflatounAstronauta());
   game.state.add('ProfesionesArrastrables', ProfesionesArrastrables);
   game.state.add('DefinisteTuSueno', DefinisteTuSueno);

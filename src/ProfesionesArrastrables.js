@@ -12,6 +12,8 @@ import numero3 from './assets/number3.svg';
 import numero4 from './assets/number4.png';
 import numero5 from './assets/number5.png';
 import numero6 from './assets/number6.png';
+import bubble1 from './assets/bubble1.mp3';
+import bubbleEnd1 from './assets/bubbleEnd1.mp3';
 
 function comenzarJuegoExterno() {
 	var juegoHtml="<div id='mySidenav' class='sidenav'><a href='javascript:void(0)' class='closebtn'>&times;</a><a id='prueba' >BoyGirl</a><a href='#'>Services</a><a href='#'>Clients</a><a href='#'>Contact</a></div><div id='navBar'><div id='menu'><img></div><div id='siguienteJuego' >	<i class='fas fa-caret-right'></i></div><div id='puntaje' >0</div><div id='moneda'><img></div></div><svg id='misvg' class='contenedorSVG'><rect class='recta' draggable='false' data-imagen="+estudiandoMadre+" transform='matrix(1,0,0,1,0,0)'/><image id='imagenPrueba' class='imagenCaja'  data-ruta-imagen="+numero1+" transform='matrix(1,0,0,1,0,0)'/><rect class='recta' draggable='false' data-imagen="+estudiando+" transform='matrix(1,0,0,1,0,0)'/><image class='imagenCaja' data-ruta-imagen="+numero2+"  transform='matrix(1,0,0,1,0,0)'/><rect class='recta' draggable='false' data-imagen="+preguntando+"  transform='matrix(1,0,0,1,0,0)'/><image class='imagenCaja' data-ruta-imagen="+numero3+"  transform='matrix(1,0,0,1,0,0)'/><rect class='recta' draggable='false' data-imagen="+buenaNota+"  transform='matrix(1,0,0,1,0,0)'/><image class='imagenCaja' data-ruta-imagen="+numero4+"  transform='matrix(1,0,0,1,0,0)'/><rect class='recta' draggable='false' data-imagen="+graduado+"  transform='matrix(1,0,0,1,0,0)'/><image class='imagenCaja' data-ruta-imagen="+numero5+"  transform='matrix(1,0,0,1,0,0)'/><rect class='recta' draggable='false' data-imagen="+empresa+"  transform='matrix(1,0,0,1,0,0)'/><image class='imagenCaja' data-ruta-imagen="+numero6+" transform='matrix(1,0,0,1,0,0)'/><image class='imagenArrastrable'  draggable='true' data-ruta-imagen="+buenaNota+" transform='matrix(1,0,0,1,0,0)' /><image class='imagenArrastrable'  draggable='true'  data-ruta-imagen="+estudiando+"  transform='matrix(1,0,0,1,0,0)' /><image class='imagenArrastrable'  draggable='true'  data-ruta-imagen="+estudiandoMadre+"  transform='matrix(1,0,0,1,0,0)' /><image class='imagenArrastrable'  draggable='true'  data-ruta-imagen="+preguntando+"  transform='matrix(1,0,0,1,0,0)' /><image class='imagenArrastrable'  draggable='true'  data-ruta-imagen="+graduado+"  transform='matrix(1,0,0,1,0,0)' /><image class='imagenArrastrable'  draggable='true'  data-ruta-imagen="+empresa+"  transform='matrix(1,0,0,1,0,0)' /></svg>";
@@ -99,8 +101,8 @@ function comenzarJuegoExterno() {
 
 		head.appendChild(style);
 
-		bubble1Sound = new Audio("./bubble1.mp3");
-		bubble1SoundEnd = new Audio("./bubbleEnd1.mp3");
+		bubble1Sound = new Audio(bubble1);
+		bubble1SoundEnd = new Audio(bubbleEnd1);
 		
 		misvg.setAttribute("width",parseInt(misvg.getBoundingClientRect().width));
 		misvg.setAttribute("height",parseInt(misvg.getBoundingClientRect().height));
