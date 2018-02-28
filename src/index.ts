@@ -14,7 +14,7 @@ import { ancho, alto } from './dimens.ts';
 
 import AflatounAstronauta from './AflatounAstronauta.ts';
 import VideoProfesiones from './VideoProfesiones.ts';
-import DefinisteTuSueño from './DefinisteTuSueño.ts';
+import DefinisteTuSueno from './DefinisteTuSueno.ts';
 
 import ProfesionesArrastrables from './ProfesionesArrastrables.js';
 
@@ -33,7 +33,7 @@ function start() {
     new VideoProfesiones('VideoProfesiones.mp4')
   );
   game.state.add('ProfesionesArrastrables', ProfesionesArrastrables);
-  game.state.add('DefinisteTuSueño', DefinisteTuSueño);
+  game.state.add('DefinisteTuSueno', DefinisteTuSueno);
   game.state.start('Boot');
 }
 

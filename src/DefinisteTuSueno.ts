@@ -8,7 +8,6 @@ class DefinisteTuSueño extends Phaser.State {
   }
 
   create() {
-    //this.stage.backgroundColor='#0072bc';
     var espacio = this.game.add.sprite(0, 0, 'espacio');
     espacio.width = this.world.width;
     espacio.height = this.world.height;
