@@ -4,3 +4,6 @@ node_modules
 dist/*
 !dist/index.html
 !dist/video1.mp4
+!dist/VideoProfesiones.mp4
+!dist/bubble1.mp3
+!dist/bubbleEnd1.mp3
