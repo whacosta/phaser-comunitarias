@@ -37,10 +37,10 @@ yarn format
 ```
 
 
-Para revisar que el build se genera corre:
+Puedes revisar que todo este listo para un PR con este comando:
 
 ``` bash
-yarn webpack
+yarn check-build
 ```
 
 Si el exit code es 0 todo esta bien.

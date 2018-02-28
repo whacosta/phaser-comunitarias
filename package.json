@@ -23,7 +23,8 @@
   },
   "scripts": {
     "build": "webpack",
-    "format": "gulp prettier tslint",
+    "format": "gulp prettier",
+    "check-build": "gulp prettier tslint && webpack",
     "start": "webpack-dev-server --open"
   }
 }
