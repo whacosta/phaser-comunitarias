@@ -28,9 +28,12 @@ function start() {
   game.state.add('BoyGirl', new BoyGirlState());
   game.state.add('Video', new VideoState('video1.mp4'));
   game.state.add('AflatounAstronauta', new AflatounAstronauta());
-  game.state.add('VideoProfesiones', new VideoProfesiones('VideoProfesiones.mp4'));
-  game.state.add('ProfesionesArrastrables',ProfesionesArrastrables);
-  game.state.add('DefinisteTuSueño',DefinisteTuSueño);
+  game.state.add(
+    'VideoProfesiones',
+    new VideoProfesiones('VideoProfesiones.mp4')
+  );
+  game.state.add('ProfesionesArrastrables', ProfesionesArrastrables);
+  game.state.add('DefinisteTuSueño', DefinisteTuSueño);
   game.state.start('Boot');
 }
 

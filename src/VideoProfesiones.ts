@@ -9,10 +9,12 @@ class VideoProfesiones extends Phaser.State {
 
   create() {
     const video = new Phaser.Video(this.game);
-    var videoImage=video.createVideoFromURL(this.videoURL).addToWorld(0,0,0,0);
+    var videoImage = video
+      .createVideoFromURL(this.videoURL)
+      .addToWorld(0, 0, 0, 0);
     //video.width=this.world.width;
     //video.height=this.world.height;
-    
+
     //var videoScale = Math.min(this.game.width / video.width, this.game.height / video.height);
     //videoImage.scale.set(videoScale);
     video.play();
