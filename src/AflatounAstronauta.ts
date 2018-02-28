@@ -7,12 +7,10 @@ class AflatounAstronauta extends Phaser.State {
     this.game.load.image('aflatoun', Aflatoun);
   }
 
-  private texto;
-
   create() {
     this.stage.backgroundColor = '#0072bc';
-    var margenTop = 1 / 8 * this.world.centerY;
-    var aflatoun = this.game.add.sprite(
+    const margenTop = 1 / 8 * this.world.centerY;
+    const aflatoun = this.game.add.sprite(
       this.world.width / 2,
       this.world.height,
       'astronauta'
@@ -23,7 +21,7 @@ class AflatounAstronauta extends Phaser.State {
     aflatoun.height = this.world.centerY;
     aflatoun.y = aflatoun.y - aflatoun.height / 2;
 
-    var style = {
+    const style = {
       font: 'bold 30pt Arial',
       fill: 'white',
       align: 'left',
@@ -31,7 +29,7 @@ class AflatounAstronauta extends Phaser.State {
       wordWrapWidth: 98 / 100 * this.world.width,
     };
 
-    var text = this.game.add.text(
+    const text = this.game.add.text(
       this.game.world.centerX,
       margenTop,
       'Hola amigos! Por fin consegui el traje de astronauta. Quiero de grande ir a la luna pero para eso tengo que esforzarme por estudiar mucho. Que quieren ser ustedes?',
