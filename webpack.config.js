@@ -27,6 +27,15 @@ module.exports = {
         test: /\.ts$/,
         use: 'ts-loader',
         exclude: /node_modules/
+      },
+      {
+        test: /\.(html)$/,
+        use: {
+          loader: 'html-loader',
+          options: {
+            attrs: ['img:src','image:href','rect:data-imagen','image:data-ruta-imagen']
+          }
+        }
       }
     ]
   },
