@@ -1,3 +1,4 @@
+var ProfesionesArrastrablesHtml=require("./html/ProfesionesArrastrables.html");
 import monedaRuta from './assets/coin.png';
 import barRuta from './assets/hamburguer.png';
 import estudiandoMadre from './assets/estudiandoMadre2.png';
@@ -12,16 +13,16 @@ import numero3 from './assets/number3.svg';
 import numero4 from './assets/number4.png';
 import numero5 from './assets/number5.png';
 import numero6 from './assets/number6.png';
-import bubble1 from './assets/bubble1.mp3';
+import bubble from './assets/bubble2.mp3';
 import bubbleEnd1 from './assets/bubbleEnd1.mp3';
+import bubbleWrong from './assets/bubbleWrong.mp3';
 
 function comenzarJuegoExterno() {
-	var juegoHtml="<div id='mySidenav' class='sidenav'><a href='javascript:void(0)' class='closebtn'>&times;</a><a id='prueba' >BoyGirl</a><a href='#'>Services</a><a href='#'>Clients</a><a href='#'>Contact</a></div><div id='navBar'><div id='menu'><img></div><div id='siguienteJuego' >	<i class='fas fa-caret-right'></i></div><div id='puntaje' >0</div><div id='moneda'><img></div></div><svg id='misvg' class='contenedorSVG'><rect class='recta' draggable='false' data-imagen="+estudiandoMadre+" transform='matrix(1,0,0,1,0,0)'/><image id='imagenPrueba' class='imagenCaja'  data-ruta-imagen="+numero1+" transform='matrix(1,0,0,1,0,0)'/><rect class='recta' draggable='false' data-imagen="+estudiando+" transform='matrix(1,0,0,1,0,0)'/><image class='imagenCaja' data-ruta-imagen="+numero2+"  transform='matrix(1,0,0,1,0,0)'/><rect class='recta' draggable='false' data-imagen="+preguntando+"  transform='matrix(1,0,0,1,0,0)'/><image class='imagenCaja' data-ruta-imagen="+numero3+"  transform='matrix(1,0,0,1,0,0)'/><rect class='recta' draggable='false' data-imagen="+buenaNota+"  transform='matrix(1,0,0,1,0,0)'/><image class='imagenCaja' data-ruta-imagen="+numero4+"  transform='matrix(1,0,0,1,0,0)'/><rect class='recta' draggable='false' data-imagen="+graduado+"  transform='matrix(1,0,0,1,0,0)'/><image class='imagenCaja' data-ruta-imagen="+numero5+"  transform='matrix(1,0,0,1,0,0)'/><rect class='recta' draggable='false' data-imagen="+empresa+"  transform='matrix(1,0,0,1,0,0)'/><image class='imagenCaja' data-ruta-imagen="+numero6+" transform='matrix(1,0,0,1,0,0)'/><image class='imagenArrastrable'  draggable='true' data-ruta-imagen="+buenaNota+" transform='matrix(1,0,0,1,0,0)' /><image class='imagenArrastrable'  draggable='true'  data-ruta-imagen="+estudiando+"  transform='matrix(1,0,0,1,0,0)' /><image class='imagenArrastrable'  draggable='true'  data-ruta-imagen="+estudiandoMadre+"  transform='matrix(1,0,0,1,0,0)' /><image class='imagenArrastrable'  draggable='true'  data-ruta-imagen="+preguntando+"  transform='matrix(1,0,0,1,0,0)' /><image class='imagenArrastrable'  draggable='true'  data-ruta-imagen="+graduado+"  transform='matrix(1,0,0,1,0,0)' /><image class='imagenArrastrable'  draggable='true'  data-ruta-imagen="+empresa+"  transform='matrix(1,0,0,1,0,0)' /></svg>";
 
-	var juegoStyle="*{margin: 0;padding: 0;}html,body{margin: 0;padding: 0;height: 100%;overflow:hidden;}#navBar{background: rgb(40, 45, 45);height: 10%;}#menu{height: 100%;float: left;cursor: pointer;}#moneda,#puntaje{float: right;height: 100%;}#moneda img{transition:0.5s;}#puntaje{color: white;text-align: center;font-size: 7vh;}#menu i{cursor: pointer;}#menu:hover{opacity: 1;}#siguienteJuego{float: left;width: 20%;height: 100%;background: rgba(0,210,0,1);margin-left:  35%;border-radius: 2px;opacity: 0;text-align: center;display: none;}#siguienteJuego:hover{cursor: pointer;}#siguienteJuego i{color:rgb(237,237,237);font-size: 10vh;}#misvg{background: rgba(20,140,220,0.6);width: 100%;height: 90%;}.grupoCaja{transition: 0.11s;}.grupoCajax{stroke:black;stroke-width:7;stroke-opacity:0.8;fill:red;fill-opacity:0.5;}.caja{stroke:black;stroke-width:7;stroke-opacity:0.8;fill:red;fill-opacity:0.5;transition: 0.3s;}.imagenCaja{opacity: 0.6;transition: 0.2s;}.imagenArrastrable{opacity: 1;}.recta{stroke:black;stroke-width:7;stroke-opacity:0.8;fill:red;fill-opacity:0.5;transition: 0.11s;}.hover{fill-opacity:0.8;fill:rgb(0,240,0);}.imagenCaja{opacity: 1;pointer-events: none;transition: 0.11s;}.rectaOcupada{stroke:black;stroke-width:7;stroke-opacity:0.8;transition: 0.11s;fill:white;fill-opacity:0.7;}.imagenEnlazada{transition: 0.2s;opacity: 1;}.imagenEnArrastre{opacity: 0.5}@keyframes example {0% {transform: scale(1);}30% {transform: scale(1.01);}70% {transform: scale(1.01);}100% {transform: scale(1);}}@keyframes girarMoneda {0% {transform: rotateY(0deg) scale(1);}50% {transform: rotateY(360deg) scale(1.3);}100% {transform: rotateY(0deg) scale(1);}}@keyframes siguienteJuegoAnimacion {0% {opacity: 0.2;}50% {opacity: 1}100% {opacity: 0.2;}}.sidenav {height: 100%;width: 0;position: fixed;z-index: 1;top: 0;left: 0;background-color: #111;overflow-x: hidden;transition: 0.5s;padding-top: 60px;}.sidenav a {padding: 8px 8px 8px 32px;text-decoration: none;font-size: 25px;color: #818181;display: block;transition: 0.3s;}.sidenav a:hover {color: #f1f1f1;}.sidenav .closebtn {position: absolute;top: 0;right: 25px;font-size: 36px;margin-left: 50px;}"
-		
+	var juegoStyle="*,body,html{margin:0;padding:0}body,html{height:100%;overflow:hidden}#navBar{background:#282d2d;height:10%}#moneda,#puntaje{float:right;height:100%}#moneda img{transition:.5s}#puntaje{color:#fff;text-align:center;font-size:7vh}#siguienteJuego{float:left;width:20%;height:100%;background:rgba(0,210,0,1);margin-left:35%;border-radius:2px;opacity:0;text-align:center;display:none}#siguienteJuego:hover{cursor:pointer}#siguienteJuego i{color:#ededed;font-size:10vh}#misvg{background:rgba(20,140,220,.6);width:100%;height:90%}.imagenArrastrable{opacity:1}.recta{stroke:#000;stroke-width:7;stroke-opacity:.8;fill:red;fill-opacity:.5;transition:.11s}.rectaHover{fill-opacity:.8;fill:#00f000}.imagenCaja{opacity:1;pointer-events:none;transition:.11s}.rectaOcupada{stroke:#000;fill:#fff;transition:.6s;fill-opacity:.7}.imagenCajaEnlazada{transition:.6s;opacity:0}@keyframes example{0%,100%{transform:scale(1)}30%,70%{transform:scale(1.01)}}@keyframes girarMoneda{0%,100%{transform:rotateY(0) scale(1)}50%{transform:rotateY(360deg) scale(1.3)}}@keyframes siguienteJuegoAnimacion{0%,100%{opacity:.2}50%{opacity:1}}";		
 	var bubble1Sound;
 	var bubble1SoundEnd;
+	var bubbleWrongSound;
 	var isDragging;
 	var X;
 	var Y;
@@ -37,125 +38,105 @@ function comenzarJuegoExterno() {
 		var imagenesArrastrables=document.getElementsByClassName("imagenArrastrable");
 		for (var i =0; i < rectas.length; i++) {
 			if (i==0) {
-
-				rectas[i].setAttribute("x",(1.5/100)*misvg.getAttribute("width"));
-	        	rectas[i].setAttribute("y",(2/100)*(misvg.getAttribute("width")));
-	        	rectas[i].setAttribute("width",(14.5/100)*(misvg.getAttribute("width")));
-	        	rectas[i].setAttribute("height",(45/100)*(misvg.getAttribute("height")));
+				rectas[i].setAttribute("x",parseInt((1.5/100)*misvg.getAttribute("width")));
+	        	rectas[i].setAttribute("y",parseInt((2/100)*(misvg.getAttribute("width"))));
+	        	rectas[i].setAttribute("width",parseInt((14.5/100)*(misvg.getAttribute("width"))));
+	        	rectas[i].setAttribute("height",parseInt((45/100)*(misvg.getAttribute("height"))));
 	        	rectas[i].setAttribute("indexImg",i);
 
-	        	var margenLeft=(parseFloat(rectas[i].getAttribute("width"))-0.6*parseFloat(rectas[i].getAttribute("width")))/2;
-	        	var margenTop=(parseFloat(rectas[i].getAttribute("height"))-0.6*parseFloat(rectas[i].getAttribute("height")))/2;
+	        	var margenLeft=parseInt((parseInt(rectas[i].getAttribute("width"))-0.6*parseInt(rectas[i].getAttribute("width")))/2);
+	        	var margenTop=parseInt((parseInt(rectas[i].getAttribute("height"))-0.6*parseInt(rectas[i].getAttribute("height")))/2);
 
-	        	imagenes[i].setAttribute("x",parseFloat(rectas[i].getAttribute("x"))+margenLeft);
-	        	imagenes[i].setAttribute("y",parseFloat(rectas[i].getAttribute("y"))+margenTop);
-	        	imagenes[i].setAttribute("width",parseFloat(rectas[i].getAttribute("width"))-margenLeft*2);
-	        	imagenes[i].setAttribute("height",parseFloat(rectas[i].getAttribute("height"))-margenTop*2);
+	        	imagenes[i].setAttribute("x",parseInt(rectas[i].getAttribute("x"))+margenLeft);
+	        	imagenes[i].setAttribute("y",parseInt(rectas[i].getAttribute("y"))+margenTop);
+	        	imagenes[i].setAttribute("width",parseInt(rectas[i].getAttribute("width"))-margenLeft*2);
+	        	imagenes[i].setAttribute("height",parseInt(rectas[i].getAttribute("height"))-margenTop*2);
 	        	imagenes[i].setAttribute("href",imagenes[i].getAttribute("data-ruta-imagen"));
 
-	    		imagenesArrastrables[i].setAttribute("x",parseFloat(rectas[i].getAttribute("x")));
-	        	imagenesArrastrables[i].setAttribute("y",parseFloat(rectas[i].getAttribute("y"))+parseFloat(rectas[i].getAttribute("height"))+(15/100)*misvg.getAttribute("height"));
-	        	imagenesArrastrables[i].setAttribute("width",parseFloat(rectas[i].getAttribute("width")));
+        		imagenesArrastrables[i].setAttribute("x",parseInt(rectas[i].getAttribute("x")));
+	        	imagenesArrastrables[i].setAttribute("y",parseInt(rectas[i].getAttribute("y"))+parseInt(rectas[i].getAttribute("height"))+(15/100)*misvg.getAttribute("height"));
+	        	imagenesArrastrables[i].setAttribute("width",parseInt(rectas[i].getAttribute("width")));
 	        	imagenesArrastrables[i].setAttribute("height",(35/100)*(misvg.getAttribute("height")));
 	        	imagenesArrastrables[i].setAttribute("href",imagenesArrastrables[i].getAttribute("data-ruta-imagen"));
 			}
 			else{
-				rectas[i].setAttribute("x",parseFloat(rectas[i-1].getAttribute("x"))+parseFloat(rectas[i-1].getAttribute("width"))+((2/100)*misvg.getAttribute("width")));
+				rectas[i].setAttribute("x",parseInt(rectas[i-1].getAttribute("x"))+parseInt(rectas[i-1].getAttribute("width"))+((2/100)*misvg.getAttribute("width")));
 	        	rectas[i].setAttribute("y",rectas[i-1].getAttribute("y"));
 	        	rectas[i].setAttribute("width",rectas[i-1].getAttribute("width"));
 	        	rectas[i].setAttribute("height",rectas[i-1].getAttribute("height"));
 	        	rectas[i].setAttribute("indexImg",i);
 
-	        	imagenes[i].setAttribute("x",parseFloat(rectas[i].getAttribute("x"))+margenLeft);
-	        	imagenes[i].setAttribute("y",parseFloat(rectas[i].getAttribute("y"))+margenTop);
-	        	imagenes[i].setAttribute("width",parseFloat(rectas[i].getAttribute("width"))-margenLeft*2);
-	        	imagenes[i].setAttribute("height",parseFloat(rectas[i].getAttribute("height"))-margenTop*2);
+	        	imagenes[i].setAttribute("x",parseInt(rectas[i].getAttribute("x"))+margenLeft);
+	        	imagenes[i].setAttribute("y",parseInt(rectas[i].getAttribute("y"))+margenTop);
+	        	imagenes[i].setAttribute("width",parseInt(rectas[i].getAttribute("width"))-margenLeft*2);
+	        	imagenes[i].setAttribute("height",parseInt(rectas[i].getAttribute("height"))-margenTop*2);
 	        	imagenes[i].setAttribute("href",imagenes[i].getAttribute("data-ruta-imagen"));
 
-	    		imagenesArrastrables[i].setAttribute("x",parseFloat(rectas[i].getAttribute("x")));
-	        	imagenesArrastrables[i].setAttribute("y",parseFloat(rectas[i].getAttribute("y"))+parseFloat(rectas[i].getAttribute("height"))+(15/100)*misvg.getAttribute("height"));
-	        	imagenesArrastrables[i].setAttribute("width",parseFloat(rectas[i].getAttribute("width")));
+        		imagenesArrastrables[i].setAttribute("x",parseInt(rectas[i].getAttribute("x")));
+	        	imagenesArrastrables[i].setAttribute("y",parseInt(rectas[i].getAttribute("y"))+parseInt(rectas[i].getAttribute("height"))+(15/100)*misvg.getAttribute("height"));
+	        	imagenesArrastrables[i].setAttribute("width",parseInt(rectas[i].getAttribute("width")));
 	        	imagenesArrastrables[i].setAttribute("height",(35/100)*(misvg.getAttribute("height")));
 	        	imagenesArrastrables[i].setAttribute("href",imagenesArrastrables[i].getAttribute("data-ruta-imagen"));
 			}
 		}
 	}
 	function start() {
+		console.log('start');
 		var head=document.getElementsByTagName('head')[0];
-		var divElementExternoJuego=document.createElement('div');
-		divElementExternoJuego.setAttribute('id','contenedorJuego');
-		divElementExternoJuego.style.width='100%';
-		divElementExternoJuego.style.height='100%';
-		divElementExternoJuego.innerHTML=juegoHtml;
 		document.getElementsByTagName('canvas')[0].style.display='none';
-		document.getElementsByTagName('body')[0].appendChild(divElementExternoJuego);
+		document.getElementsByTagName('body')[0].insertAdjacentHTML('beforeend',ProfesionesArrastrablesHtml);
+		//se crea el estilo necesario para contener el estilo del juego original y ser agregado al index
 		var style = document.createElement('style');
 		style.setAttribute('id','estiloJuegoExterno');
-		style.type = 'text/css';
 
+		style.type = 'text/css';
 		if (style.styleSheet){
 		  style.styleSheet.cssText = juegoStyle;
 		} else {
 		  style.appendChild(document.createTextNode(juegoStyle));
 		}
+		
 
+		head.insertAdjacentHTML('beforeend',"<link id='fontawesome' href='https://use.fontawesome.com/releases/v5.0.8/css/all.css' rel='stylesheet'>");
 		head.appendChild(style);
-
-		bubble1Sound = new Audio(bubble1);
+		bubble1Sound = new Audio(bubble);
 		bubble1SoundEnd = new Audio(bubbleEnd1);
+		bubbleWrongSound= new Audio(bubbleWrong);
 		
 		misvg.setAttribute("width",parseInt(misvg.getBoundingClientRect().width));
 		misvg.setAttribute("height",parseInt(misvg.getBoundingClientRect().height));
+	
+        colocarCajas();
+        moneda.style.width=window.getComputedStyle(moneda,null).getPropertyValue('height');
+        moneda.children[0].width=(80/100)*parseFloat(window.getComputedStyle(moneda,null).getPropertyValue('height'));
+        moneda.children[0].height=(80/100)*parseFloat(window.getComputedStyle(moneda,null).getPropertyValue('height'));
+        moneda.children[0].src=monedaRuta;
+        moneda.children[0].style.margin=((10/100)*parseFloat(window.getComputedStyle(moneda,null).getPropertyValue('height')))+"px";
 
-	    colocarCajas();
+        puntaje.style.width=window.getComputedStyle(puntaje,null).getPropertyValue('height');
 
-	    moneda.style.width=window.getComputedStyle(moneda,null).getPropertyValue('height');
-	    moneda.children[0].width=(80/100)*parseFloat(window.getComputedStyle(moneda,null).getPropertyValue('height'));
-	    moneda.children[0].height=(80/100)*parseFloat(window.getComputedStyle(moneda,null).getPropertyValue('height'));
-	    moneda.children[0].src=monedaRuta;
-	    moneda.children[0].style.margin=((10/100)*parseFloat(window.getComputedStyle(moneda,null).getPropertyValue('height')))+"px";
+        console.log(moneda.getBoundingClientRect().height);
 
-	    menu.style.width=window.getComputedStyle(menu,null).getPropertyValue('height');
-	    menu.children[0].width=(80/100)*parseFloat(window.getComputedStyle(menu,null).getPropertyValue('height'));
-	    menu.children[0].height=(80/100)*parseFloat(window.getComputedStyle(menu,null).getPropertyValue('height'));
-	    menu.children[0].src=barRuta;
-	    menu.children[0].style.margin=((10/100)*parseFloat(window.getComputedStyle(menu,null).getPropertyValue('height')))+"px";
-
-	    puntaje.style.width=window.getComputedStyle(puntaje,null).getPropertyValue('height');
-
-	    window.addEventListener('resize',handleResize);
+        window.addEventListener('resize',handleResize);
 		misvg.addEventListener('mousedown',handleMouseDown,false);
 		misvg.addEventListener('mousemove',handleMouseMove,false);
 		misvg.addEventListener('mouseup',handleMouseUp,false);
-		misvg.addEventListener('mouseover',handleMouseOver,false);
 
 		misvg.addEventListener('touchstart',handleTouchStart,false);
 		misvg.addEventListener('touchmove',handleTouchMove,false);
 		misvg.addEventListener('touchend',handleTouchEnd,false);
 		misvg.addEventListener('touchcancel',handleTouchCancel,false);
-
-		prueba.addEventListener('click',about);
 		siguienteJuego.addEventListener('click',siguienteJuegoPhaser);
-		menu.addEventListener('click',openNav);
-		mySidenav.children[0].addEventListener('click',closeNav);
 	}
-
-	function about(argument) {
-		document.getElementById('estiloJuegoExterno').parentElement.removeChild(document.getElementById('estiloJuegoExterno'));
-		window.removeEventListener('resize',handleResize);
-		document.body.removeChild(document.getElementById('contenedorJuego'));
-		document.getElementsByTagName('canvas')[0].style.display='block';
-		ProfesionesArrastrables.game.state.start('BoyGirl');
-	}
-
 	function siguienteJuegoPhaser(e) {
 		document.getElementById('estiloJuegoExterno').parentElement.removeChild(document.getElementById('estiloJuegoExterno'));
+		document.getElementById('fontawesome').parentElement.removeChild(document.getElementById('fontawesome'));
 		window.removeEventListener('resize',handleResize);
 		document.body.removeChild(document.getElementById('contenedorJuego'));
 		document.getElementsByTagName('canvas')[0].style.display='block';
 		ProfesionesArrastrables.game.state.start('DefinisteTuSueno');
-	}
 
+	}
 	function handleTouchStart(e) {
 		e.preventDefault();
 		if (e.changedTouches[0].target.nodeName!='svg' && e.changedTouches[0].target.getAttribute('draggable')=='true') {
@@ -167,7 +148,6 @@ function comenzarJuegoExterno() {
 		}
 	}
 	function handleTouchMove(e) {
-		console.log('TOUCHMOVE');
 		e.preventDefault();
 		handleMove(e);
 	}
@@ -180,25 +160,24 @@ function comenzarJuegoExterno() {
 		isDragging=false;
 		target=null;
 		backElement=null;
-		console.log('CANCEL');
 	}
-
 	function handleMouseDown(e) {
+		e.preventDefault();
 		if (e.target.nodeName!='svg' && e.target.getAttribute('draggable')=='true') {
-			X=e.offsetX;
-			Y=e.offsetY;
+			X=parseInt(e.clientX-misvg.getBoundingClientRect().left);
+			Y=parseInt(e.clientY-misvg.getBoundingClientRect().top);
 			target=misvg.removeChild(e.target);
 			misvg.appendChild(target);
 			isDragging=true;
 		}
 	}
 	function handleMouseMove(e) {
+		e.preventDefault();
 		handleMove(e);
 	}
 	function handleMouseUp(e) {
+		e.preventDefault();
 		handleUp(e);
-	}
-	function handleMouseOver(e) {
 	}
 
 	function setMatrixString(a,b,c,d,e,f) {
@@ -237,29 +216,30 @@ function comenzarJuegoExterno() {
 
 		var eNew=cx-(newScale*cx);
 		var fNew=cy-(newScale*cy);
-		element.setAttribute('transform',setMatrixString(newScale,0,0,newScale,eNew,fNew)) ;
+		if(window.navigator.userAgent.includes('Firefox')){
+			element.style.transform=setMatrixString(newScale,0,0,newScale,eNew,fNew);
+		}
+		else{
+			element.setAttribute('transform',setMatrixString(newScale,0,0,newScale,eNew,fNew)) ;
+		}
 	}
 
 	function handleResize(e) {
 		console.log("resize");
 		moneda.style.width=window.getComputedStyle(moneda,null).getPropertyValue('height');
-	    moneda.children[0].width=(80/100)*parseFloat(window.getComputedStyle(moneda,null).getPropertyValue('height'));
-	    moneda.children[0].height=(80/100)*parseFloat(window.getComputedStyle(moneda,null).getPropertyValue('height'));
-	    moneda.children[0].style.margin=((10/100)*parseFloat(window.getComputedStyle(moneda,null).getPropertyValue('height')))+"px";
-
-	    menu.style.width=window.getComputedStyle(menu,null).getPropertyValue('height');
-	    menu.children[0].width=(80/100)*parseFloat(window.getComputedStyle(menu,null).getPropertyValue('height'));
-	    menu.children[0].height=(80/100)*parseFloat(window.getComputedStyle(menu,null).getPropertyValue('height'));
-
-	    menu.children[0].style.margin=((10/100)*parseFloat(window.getComputedStyle(menu,null).getPropertyValue('height')))+"px";
-	    puntaje.style.width=window.getComputedStyle(puntaje,null).getPropertyValue('height');
+        moneda.children[0].width=(80/100)*parseFloat(window.getComputedStyle(moneda,null).getPropertyValue('height'));
+        moneda.children[0].height=(80/100)*parseFloat(window.getComputedStyle(moneda,null).getPropertyValue('height'));
+        moneda.children[0].src=monedaRuta;
+        moneda.children[0].style.margin=((10/100)*parseFloat(window.getComputedStyle(moneda,null).getPropertyValue('height')))+"px";
+        
+        puntaje.style.width=window.getComputedStyle(puntaje,null).getPropertyValue('height');
 		var actualSvgWidth=misvg.getBoundingClientRect().width;
 		var actualSvgHeight=misvg.getBoundingClientRect().height;
 		var antiguoSvgWidth=parseFloat(misvg.getAttribute("width"));
 		var antiguoSvgHeight=parseFloat(misvg.getAttribute("height"));
 
 		misvg.setAttribute("width",actualSvgWidth);
-	  	misvg.setAttribute("height",actualSvgHeight);
+      	misvg.setAttribute("height",actualSvgHeight);
 
 		var elementosSvg=misvg.children;
 		for (var i =  elementosSvg.length- 1; i >= 0; i--) {
@@ -280,7 +260,6 @@ function comenzarJuegoExterno() {
 	    	element.setAttribute("height",newHeight);
 	    	element.setAttribute("transform",setMatrixString(1,0,0,1,newTx,newTy));
 		}
-
 	}
 
 	function handleMove(e) {
@@ -289,35 +268,32 @@ function comenzarJuegoExterno() {
 			var offsetY;
 			var backElements;
 			if (e.type=='touchmove') {
-				offsetX=parseInt(e.changedTouches[0].clientX-misvg.getBoundingClientRect().left);
-				offsetY=parseInt(e.targetTouches[0].clientY-misvg.getBoundingClientRect().top);
+				offsetX=parseInt(e.touches[0].clientX-misvg.getBoundingClientRect().left);
+				offsetY=parseInt(e.touches[0].clientY-misvg.getBoundingClientRect().top);
 				backElements=document.elementsFromPoint(e.changedTouches[0].clientX,e.changedTouches[0].clientY);
 			}
 			else{
-				offsetX=e.offsetX;
-				offsetY=e.offsetY;
+				offsetX=parseInt(e.clientX-misvg.getBoundingClientRect().left);
+				offsetY=parseInt(e.clientY-misvg.getBoundingClientRect().top);
 				backElements=document.elementsFromPoint(e.clientX,e.clientY);
 			}
-			if ("recta hover".includes(backElements[1].getAttribute('class')) || "recta hover".includes(backElements[0].getAttribute('class'))) {
+			if ("recta rectaHover".includes(backElements[1].getAttribute('class')) || "recta rectaHover".includes(backElements[0].getAttribute('class'))) {
 				if (backElement==null) {
-					backElement=(backElements[0].getAttribute("class").includes("recta") ? backElements[0] : backElements[1]);
-					backElement.setAttribute('class','recta hover');
-					bubble1Sound.pause();
 					bubble1Sound.currentTime = 0;	
-					bubble1Sound.play();
+					bubble1Sound.play();	
+					backElement=(backElements[0].getAttribute("class").includes("recta") ? backElements[0] : backElements[1]);
+					backElement.setAttribute('class','recta rectaHover');
 					scaleCenter(backElement.nextElementSibling,1.1);
-					scaleCenter(backElement,1.1);
+					scaleCenter(backElement,1.1);	
 					window.navigator.vibrate(20);
 				}
 				else if ((backElements[1].getAttribute('class').includes('recta')&&backElements[1]!=backElement) || (backElements[0].getAttribute('class').includes('recta')&&backElements[0]!=backElement)){
 					backElement.setAttribute('class','recta');
-
 					scaleCenter(backElement.nextElementSibling,1);
 					scaleCenter(backElement,1);
 					backElement=null;
 				}
 			}
-			
 			else if(backElement){
 				backElement.setAttribute('class','recta');
 				scaleCenter(backElement.nextElementSibling,1);
@@ -326,50 +302,63 @@ function comenzarJuegoExterno() {
 			}
 			var dx=offsetX-X;
 			var dy=offsetY-Y;
-			var dxNuevo=getIndexMatrix(target.getAttribute('transform'),4)+dx;
-			var dyNuevo=getIndexMatrix(target.getAttribute('transform'),5)+dy;
-
-			target.setAttribute('transform',setMatrixString(1,0,0,1,dxNuevo,dyNuevo));
-			X=offsetX;
-			Y=offsetY;
+			target.setAttribute('transform',setMatrixString(1,0,0,1,dx,dy));
 		}
 	}
 
 	function handleUp(e) {
+		console.log('up');
 		var backElements;
 		if (e.type=='touchend') {
 			backElements=document.elementsFromPoint(e.changedTouches[0].clientX,e.changedTouches[0].clientY);
 		}else{
 			backElements=document.elementsFromPoint(e.clientX,e.clientY);
 		}
-
-		if (backElements[0].getAttribute("class")=="imagenArrastrable" && backElements[1].getAttribute("class")=="recta hover") {
-
+		if (backElements[0].getAttribute("class")=="imagenArrastrable" && backElements[1].getAttribute("class")=="recta rectaHover") {
 			if (backElements[1].getAttribute("data-imagen")==backElements[0].getAttribute("href")) {
-				var numberImagen=backElements[1].nextElementSibling;
-				var matrixImagen=getMatrix(backElements[0].getAttribute("transform"));
-				var matrixRecta=getMatrix(backElements[1].getAttribute("transform"));
-				var dx=(parseFloat(backElements[0].getAttribute("x"))+parseFloat(matrixImagen[4]))-parseFloat(backElements[1].getAttribute("x")+parseFloat(matrixRecta[4]));
-				var dy=(parseFloat(backElements[0].getAttribute("y"))+parseFloat(matrixImagen[5]))-parseFloat(backElements[1].getAttribute("y")+parseFloat(matrixRecta[5]));
 				backElements[0].style.transition="0.2s";
-				backElements[1].nextElementSibling.style.opacity="0"
-				//backElements[1].style.fill="white"
-
+				backElements[1].nextElementSibling.setAttribute('class','imagenCaja imagenCajaEnlazada');
 				backElements[1].setAttribute('class','recta rectaOcupada');
+
 				bubble1SoundEnd.pause();
 				bubble1SoundEnd.currentTime = 0;	
 				bubble1SoundEnd.play();	
+
 				scaleCenter(backElement.nextElementSibling,1);
 				scaleCenter(backElement,1);
 				backElement=null;
 
+				var numberImagen=backElements[1].nextElementSibling;
+				var matrixImagen=getMatrix(backElements[0].getAttribute("transform"));
+				var matrixRecta=getMatrix(backElements[1].getAttribute("transform"));
+
+				var dx=(parseFloat(backElements[0].getAttribute("x"))+parseFloat(matrixImagen[4]))-(parseFloat(backElements[1].getAttribute("x"))+parseFloat(matrixRecta[4]));
+				var dy=(parseFloat(backElements[0].getAttribute("y"))+parseFloat(matrixImagen[5]))-(parseFloat(backElements[1].getAttribute("y"))+parseFloat(matrixRecta[5]));
 				var margenLeft=(parseFloat(backElements[1].getAttribute("width"))-parseFloat(backElements[0].getAttribute("width")))/2;
 				var margenTop=(parseFloat(backElements[1].getAttribute("height"))-parseFloat(backElements[0].getAttribute("height")))/2;
+				//Adaptacion a Firefox
+				var transitionx=+parseFloat(matrixImagen[4]);
+				var transitiony=+parseFloat(matrixImagen[5]);
+				if(window.navigator.userAgent.includes('Firefox')){
+					var target2=backElements[0];
+					backElements[0].setAttribute('x',parseFloat(backElements[0].getAttribute('x'))+transitionx);
+					backElements[0].setAttribute('y',parseFloat(backElements[0].getAttribute('y'))+transitiony);
+					backElements[0].setAttribute('transform','matrix(1,0,0,1,0,0)');
+					backElements[0].style.transform=setMatrixString(1,0,0,1,-dx+margenLeft,-dy+margenTop);
+					setTimeout(function(){ 
+						target2.removeAttribute('style');
+						target2.setAttribute('x',parseFloat(target2.getAttribute('x'))-transitionx);
+						target2.setAttribute('y',parseFloat(target2.getAttribute('y'))-transitiony);
+						target2.setAttribute("transform",setMatrixString(1,0,0,1,parseFloat(matrixImagen[4])-dx+margenLeft,parseFloat(matrixImagen[5])-dy+margenTop));
 
-				backElements[0].setAttribute("transform",setMatrixString(1,0,0,1,parseFloat(matrixImagen[4])-dx+margenLeft,parseFloat(matrixImagen[5])-dy+margenTop));
+					}, 1000);
+				}
+				else{
+					backElements[0].setAttribute("transform",setMatrixString(1,0,0,1,parseFloat(matrixImagen[4])-dx+margenLeft,parseFloat(matrixImagen[5])-dy+margenTop));
+				}
 				backElements[0].setAttribute("draggable","false");	
 				moneda.children[0].style.animation="girarMoneda 0.6s 1";
-				setTimeout(function(){moneda.children[0].style.animation=""; },400);
+				setTimeout(function(){moneda.children[0].style.animation=null; },400);
 				var ocupados=document.getElementsByClassName("recta rectaOcupada");
 				var rectas=document.getElementsByClassName("recta");
 				puntaje.innerHTML=ocupados.length;
@@ -382,37 +371,86 @@ function comenzarJuegoExterno() {
 			else if (target){
 				var target2=target;
 				var matrix=getMatrix(target.getAttribute('transform'));
+				var transitionx=+parseFloat(matrix[4]);
+				var transitiony=+parseFloat(matrix[5]);
 				var newMatrix=setMatrixString(matrix[0],matrix[1],matrix[2],matrix[3],0,0);
 				target.setAttribute("draggable","false");
-				target.style.transition="0.3s";
-				target.setAttribute('transform',newMatrix);
-				setTimeout(function(){ target2.style.transition="0s"; target2.setAttribute("draggable","true") }, 300);
+				target.style.transition="0.3s";//backElements[0] es lo mismo que target
+				bubbleWrongSound.currentTime = 0;	
+				bubbleWrongSound.play();
+				//Adaptacion a Firefox
+				if(window.navigator.userAgent.includes('Firefox')){
+					target.setAttribute('x',parseFloat(target.getAttribute('x'))+transitionx);
+					target.setAttribute('y',parseFloat(target.getAttribute('y'))+transitiony);
+					target.setAttribute('transform','matrix(1,0,0,1,0,0)');
+					target.style.transform=setMatrixString(matrix[0],matrix[1],matrix[2],matrix[3],-transitionx,-transitiony);
+					setTimeout(function(){ 
+						target2.removeAttribute('style');
+						target2.setAttribute("draggable","true") ;
+						target2.setAttribute('x',parseFloat(target2.getAttribute('x'))-transitionx);
+						target2.setAttribute('y',parseFloat(target2.getAttribute('y'))-transitiony);
+						target2.setAttribute('transform',newMatrix);
+					}, 300);
+				}
+				else{
+					target.setAttribute('transform',newMatrix);//backElements[0] es lo mismo que target
+					setTimeout(function(){ target2.removeAttribute('style'); target2.setAttribute("draggable","true") }, 300);
+				}
 			}
 		}else if (target){
 			var target2=target;
 			var matrix=getMatrix(target.getAttribute('transform'));
 			var newMatrix=setMatrixString(matrix[0],matrix[1],matrix[2],matrix[3],0,0);
+			var transitionx=+parseFloat(matrix[4]);
+			var transitiony=+parseFloat(matrix[5]);
 			target.setAttribute("draggable","false");
 			target.style.transition="0.3s";
-			target.setAttribute('transform',newMatrix);
-			setTimeout(function(){ target2.style.transition="0s"; target2.setAttribute("draggable","true") }, 300);
+			//Adaptacion a Firefox
+			if(window.navigator.userAgent.includes('Firefox')){
+				target.setAttribute('x',parseFloat(target.getAttribute('x'))+transitionx);
+				target.setAttribute('y',parseFloat(target.getAttribute('y'))+transitiony);
+				target.setAttribute('transform','matrix(1,0,0,1,0,0)');
+				target.style.transform=setMatrixString(matrix[0],matrix[1],matrix[2],matrix[3],-transitionx,-transitiony);
+				setTimeout(function(){ 
+					target2.removeAttribute('style');
+					target2.setAttribute("draggable","true") ;
+					target2.setAttribute('x',parseFloat(target2.getAttribute('x'))-transitionx);
+					target2.setAttribute('y',parseFloat(target2.getAttribute('y'))-transitiony);
+					target2.setAttribute('transform',newMatrix);
+
+				}, 300);
+			}
+			else{
+				target.setAttribute('transform',newMatrix);//backElements[0] es lo mismo que target
+				setTimeout(function(){ target2.removeAttribute('style'); target2.setAttribute("draggable","true") }, 300);
+			}
 		}
 		if (backElement) {
 			backElement.setAttribute('class','recta');
 			scaleCenter(backElement.nextElementSibling,1);
 			scaleCenter(backElement,1);
+			shakeAnimate(backElements[1],10,110,2);
+			shakeAnimate(backElements[1].nextElementSibling,10,110,2);
 			backElement=null;
 		}
 		target=null;
 		isDragging=false;
 	}
 
-	function openNav() {
-	document.getElementById("mySidenav").style.width = "250px";
-	}
+	function shakeAnimate(elemento,angulo,duracion,iteraciones) {
 
-	function closeNav() {
-	document.getElementById("mySidenav").style.width = "0";
+		var originx=parseInt(elemento.getAttribute('x'))+parseInt(elemento.getAttribute('width'))/2;
+		var originy=parseInt(elemento.getAttribute('y'))+parseInt(elemento.getAttribute('height'))/2;
+		var origin=originx+'px '+originy+'px';
+		//elemento.style.transformOrigin=originx+'px '+originy+'px';
+		var matrix=getMatrix(elemento.getAttribute('transform'));
+        var a=Math.cos(angulo*(Math.PI/180));
+        var b=Math.sin(angulo*(Math.PI/180));
+        var newMatrix=setMatrixString(a,b,-b,a,parseFloat(matrix[4]),parseFloat(matrix[5]));
+       	a=Math.cos(-angulo*(Math.PI/180));
+        b=Math.sin(-angulo*(Math.PI/180));
+        var newMatrix2=setMatrixString(a,b,-b,a,parseFloat(matrix[4]),parseFloat(matrix[5]));
+		var animacion=elemento.animate([{transform:elemento.getAttribute('transform'),transformOrigin:origin,offset:0.0},{transform:newMatrix,transformOrigin:origin,offset:0.25},{transform:elemento.getAttribute('transform'),transformOrigin:origin,offset:0.50},{transform:newMatrix2,transformOrigin:origin,offset:0.75},{transform:elemento.getAttribute('transform'),transformOrigin:origin,offset:1}],{duration:duracion,iterations:iteraciones});
 	}
 
 }
