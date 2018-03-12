@@ -8,6 +8,7 @@ import VideoState from './VideoState.ts';
 import GameState from './GameState.ts';
 import BoyGirlState from './BoyGirlState.ts';
 import LoadState from './LoadState.ts';
+import LoginState from './LoginState.ts';
 import EncuentraAflatoun from './EncuentraAflatoun.ts';
 import EligeAflatoun from './EligeAflatoun.ts';
 import { ancho, alto } from './dimens.ts';
@@ -19,6 +20,7 @@ import Video1 from './assets/video1.mp4';
 
 function start() {
   const game = new Phaser.Game(ancho, alto, Phaser.AUTO, 'game');
+  game.state.add('Login', new LoginState());
   game.state.add('Boot', new BootState());
   game.state.add('Preload', new LoadState());
   game.state.add('Game', new GameState());
@@ -27,7 +29,7 @@ function start() {
   game.state.add('AflatounAstronauta', new AflatounAstronauta());
   game.state.add('ProfesionesArrastrables', ProfesionesArrastrables);
   game.state.add('DefinisteTuSueno', DefinisteTuSueno);
-  game.state.start('Boot');
+  game.state.start('Login');
 }
 
 start();
