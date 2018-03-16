@@ -1,2 +1,2 @@
-export const ancho = 1080;
-export const alto = 600;
+export const ancho = window.innerWidth;
+export const alto = window.innerHeight;

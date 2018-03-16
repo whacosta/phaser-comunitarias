@@ -6,6 +6,7 @@ import { registerKeyboardInputListener } from './utils/KeyboardInput.ts';
 
 class LoginState extends Phaser.State {
   preload() {
+    this.scale.pageAlignHorizontally = true;
     this.game.load.image('login_bg', backgroundPath);
     this.game.load.image('children_logo', childrenLogoPath);
   }
@@ -31,7 +32,7 @@ class LoginState extends Phaser.State {
       codeText,
       ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'],
       (inputText: string) => {
-        throw new Error('TODO submit code ' + inputText);
+        if (inputText === '12345') this.game.state.start('Boot');
       }
     );
   }
