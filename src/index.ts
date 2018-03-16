@@ -19,17 +19,23 @@ import ProfesionesArrastrables from './ProfesionesArrastrables.js';
 import Video1 from './assets/video1.mp4';
 
 function start() {
-  const game = new Phaser.Game(ancho, alto, Phaser.AUTO, 'game');
+  const game = new Phaser.Game(
+    window.innerWidth,
+    window.innerHeight,
+    Phaser.AUTO,
+    'game'
+  );
+
   game.state.add('Login', new LoginState());
   game.state.add('Boot', new BootState());
   game.state.add('Preload', new LoadState());
   game.state.add('Game', new GameState());
   game.state.add('BoyGirl', new BoyGirlState());
-  game.state.add('Video', new VideoState(Video1));
+  game.state.add('Video', new VideoState(Video1, 'ProfesionesArrastrables'));
   game.state.add('AflatounAstronauta', new AflatounAstronauta());
   game.state.add('ProfesionesArrastrables', ProfesionesArrastrables);
   game.state.add('DefinisteTuSueno', DefinisteTuSueno);
-  game.state.start('Login');
+  game.state.start('Boot');
 }
 
 start();
