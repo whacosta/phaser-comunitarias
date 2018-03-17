@@ -15,6 +15,7 @@ import { ancho, alto } from './dimens.ts';
 import AflatounAstronauta from './AflatounAstronauta.ts';
 import DefinisteTuSueno from './DefinisteTuSueno.ts';
 import ProfesionesArrastrables from './ProfesionesArrastrables.js';
+import ProfesionesPintables from './ProfesionesPintables.js';
 
 import Video1 from './assets/video1.mp4';
 
@@ -34,6 +35,7 @@ function start() {
   game.state.add('Video', new VideoState(Video1, 'ProfesionesArrastrables'));
   game.state.add('AflatounAstronauta', new AflatounAstronauta());
   game.state.add('ProfesionesArrastrables', ProfesionesArrastrables);
+  game.state.add('ProfesionesPintables', ProfesionesPintables);
   game.state.add('DefinisteTuSueno', DefinisteTuSueno);
   game.state.start('Boot');
 }
