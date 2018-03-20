@@ -62,7 +62,7 @@ class MenuState extends Phaser.State {
   }
 
   playTheGame() {
-    this.game.state.start('Video');
+    this.game.state.start('Clothes');
   }
 
   btnAvatarAction() {
