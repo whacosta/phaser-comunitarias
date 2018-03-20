@@ -1,11 +1,9 @@
 class HtmlState extends Phaser.State {
-  private htmlString: string;
-  private body: HTMLElement;
+  private readonly htmlString: string;
 
   constructor(htmlString: string, cssString: string) {
     super();
     this.htmlString = `<div id="interactiva"><style>${cssString}</style>${htmlString}</div>`;
-    this.body = document.body;
   }
 
   private setHtml() {
@@ -26,6 +24,10 @@ class HtmlState extends Phaser.State {
 
   create() {
     this.setHtml();
+  }
+
+  shutdown() {
+    this.removeHtml();
   }
 }
 
