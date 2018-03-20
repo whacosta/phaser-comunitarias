@@ -35,7 +35,7 @@ function start() {
   game.state.add('AflatounAstronauta', new AflatounAstronauta());
   game.state.add('ProfesionesArrastrables', ProfesionesArrastrables);
   game.state.add('DefinisteTuSueno', DefinisteTuSueno);
-  game.state.start('Boot');
+  game.state.start('Login');
 }
 
 start();
