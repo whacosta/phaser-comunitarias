@@ -19,7 +19,7 @@ const camisetaPos: GoalPos = { minX: 480, maxX: 520, minY: 240, maxY: 280 };
 const pantalonPos: GoalPos = { minX: 480, maxX: 520, minY: 380, maxY: 420 };
 
 class ClothesState extends Phaser.State {
-  private draggableSprites: { [id: string]: SpriteState } = {
+  private readonly draggableSprites: { [id: string]: SpriteState } = {
     camiseta: { goalPos: camisetaPos, ready: false },
     pantalon: { goalPos: pantalonPos, ready: false },
   };

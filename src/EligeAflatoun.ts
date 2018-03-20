@@ -1,4 +1,4 @@
-//Minijuego de Encontrar a Aflatoun
+// Minijuego de Encontrar a Aflatoun
 
 import ImagenFondo from './assets/fondojuego.png';
 import Aflatoun from './assets/aflatoun.png';
@@ -21,7 +21,7 @@ class EligeAflatoun extends Phaser.State {
     let fondo;
     let alto;
     let ancho;
-    let afla; //personaje a buscar
+    let afla; // personaje a buscar
     let equivocada1;
     let equivocada2;
     let equivocada3;
@@ -30,7 +30,7 @@ class EligeAflatoun extends Phaser.State {
     alto = fondo.height;
     afla = this.game.add.image(ancho * 2.5 / 4, alto / 4, 'personaje');
     afla.scale.setTo(1, 1);
-    afla.inputEnabled = true; //Habilita interaccion con aflatoun
+    afla.inputEnabled = true; // Habilita interaccion con aflatoun
     this.texto = this.game.add.text(ancho / 3, 16, '', { fill: 'black' });
     this.texto.text = 'Selecciona a Aflatoun';
     afla.events.onInputDown.add(this.listenerG, this);

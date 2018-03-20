@@ -15,7 +15,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(png|svg|jpg|gif)$/,
+        test: /\.(png|svg|jpg|gif|mp4|mp3)$/,
         use: 'file-loader',
         exclude: /node_modules/
       },
@@ -27,6 +27,15 @@ module.exports = {
         test: /\.ts$/,
         use: 'ts-loader',
         exclude: /node_modules/
+      },
+      {
+        test: /\.(html)$/,
+        use: {
+          loader: 'html-loader',
+          options: {
+            attrs: ['img:src','image:href','rect:data-imagen','image:data-ruta-imagen']
+          }
+        }
       }
     ]
   },

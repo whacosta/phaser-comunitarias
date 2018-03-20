@@ -3,4 +3,3 @@ node_modules
 *.swo
 dist/*
 !dist/index.html
-!dist/video1.mp4
