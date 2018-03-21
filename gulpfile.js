@@ -6,7 +6,12 @@ const isCI = process.env.CI;
 
 gulp.task('prettier', () =>
   gulp
-    .src(['./src/webpack.config.js', './gulpfile.js', 'src/**/*.ts'])
+    .src([
+      './src/webpack.config.js',
+      './gulpfile.js',
+      'src/**/*.ts',
+      'src/css/*.css',
+    ])
     .pipe(
       prettier(
         {

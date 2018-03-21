@@ -29,6 +29,12 @@ module.exports = {
         exclude: /node_modules/
       },
       {
+         test: /\.css$/,
+         use: [
+           'css-loader'
+         ]
+      },
+      {
         test: /\.(html)$/,
         use: {
           loader: 'html-loader',
