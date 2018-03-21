@@ -1,6 +1,7 @@
 const gulp = require('gulp');
 const prettier = require('gulp-prettier-plugin');
 const tslint = require('gulp-tslint');
+const eslint = require('gulp-eslint');
 const { Linter } = require('tslint');
 const isCI = process.env.CI;
 
@@ -10,6 +11,7 @@ gulp.task('prettier', () =>
       './src/webpack.config.js',
       './gulpfile.js',
       'src/**/*.ts',
+      'src/**/*.js',
       'src/css/*.css',
     ])
     .pipe(
@@ -25,6 +27,14 @@ gulp.task('prettier', () =>
       )
     )
     .pipe(gulp.dest(file => file.base))
+);
+
+gulp.task('eslint', () =>
+  gulp
+    .src('src/**/*.js')
+    .pipe(eslint())
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError())
 );
 
 gulp.task('tslint', () => {
