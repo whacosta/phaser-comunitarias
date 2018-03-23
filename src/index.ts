@@ -9,9 +9,9 @@ import GameState from './GameState.ts';
 import BoyGirlState from './BoyGirlState.ts';
 import LoadState from './LoadState.ts';
 import LoginState from './LoginState.ts';
+import CasasState from './CasasState.ts';
 import EncuentraAflatoun from './EncuentraAflatoun.ts';
 import EligeAflatoun from './EligeAflatoun.ts';
-import { ancho, alto } from './dimens.ts';
 import AflatounAstronauta from './AflatounAstronauta.ts';
 import DefinisteTuSueno from './DefinisteTuSueno.ts';
 import ProfesionesArrastrables from './ProfesionesArrastrables.js';
@@ -37,6 +37,7 @@ function start() {
   game.state.add('ProfesionesArrastrables', ProfesionesArrastrables);
   game.state.add('ProfesionesPintables', ProfesionesPintables);
   game.state.add('DefinisteTuSueno', DefinisteTuSueno);
+  game.state.add('Casas', CasasState);
   game.state.start('Login');
 }
 
