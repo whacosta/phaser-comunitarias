@@ -1,4 +1,5 @@
 import MenuState from './MenuState.ts';
+import { alto, ancho } from './dimens.ts';
 
 import childrenLogoPath from './assets/logo-children.png';
 
@@ -39,7 +40,7 @@ import chatMenuNav from './assets/msn.png';
 
 class LoadState extends Phaser.State {
   preload() {
-    const loadingBar = this.add.sprite(160, 240, 'loading');
+    const loadingBar = this.add.sprite(ancho / 2, alto / 2, 'loading');
     loadingBar.anchor.setTo(0.5, 0.5);
     this.load.setPreloadSprite(loadingBar);
 

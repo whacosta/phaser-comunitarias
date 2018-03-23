@@ -37,7 +37,7 @@ function start() {
   game.state.add('ProfesionesArrastrables', ProfesionesArrastrables);
   game.state.add('ProfesionesPintables', ProfesionesPintables);
   game.state.add('DefinisteTuSueno', DefinisteTuSueno);
-  game.state.start('Preload');
+  game.state.start('Boot');
 }
 
 start();
