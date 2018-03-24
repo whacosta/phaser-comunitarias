@@ -1,38 +1,32 @@
 import cuerpoSpritePath from './assets/cuerpo.png';
 import camisetaSpritePath from './assets/camiseta.png';
 import pantalonSpritePath from './assets/pantalon.png';
+import Area2D, { visualizeAreas } from './utils/Area2D.ts';
 import { alto, ancho } from './dimens.ts';
 
-interface GoalPos {
-  readonly minX: number;
-  readonly minY: number;
-  readonly width: number;
-  readonly height: number;
-}
-
 interface SpriteState {
-  readonly goalPos: GoalPos;
+  readonly goalPos: Area2D;
   ready: boolean;
 }
 
 const cuerpoPos = { x: ancho / 2, y: alto / 2 };
-const camisetaPos: GoalPos = {
-  minX: ancho * 0.48,
-  minY: alto * 0.36,
+const camisetaArea: Area2D = {
+  startX: ancho * 0.48,
+  startY: alto * 0.36,
   width: alto * 0.06,
   height: alto * 0.06,
 };
-const pantalonPos: GoalPos = {
-  minX: ancho * 0.48,
-  minY: alto * 0.56,
+const pantalonArea: Area2D = {
+  startX: ancho * 0.48,
+  startY: alto * 0.56,
   width: alto * 0.06,
   height: alto * 0.06,
 };
 
 class ClothesState extends Phaser.State {
   private readonly draggableSprites: { [id: string]: SpriteState } = {
-    camiseta: { goalPos: camisetaPos, ready: false },
-    pantalon: { goalPos: pantalonPos, ready: false },
+    camiseta: { goalPos: camisetaArea, ready: false },
+    pantalon: { goalPos: pantalonArea, ready: false },
   };
 
   preload() {
@@ -42,20 +36,7 @@ class ClothesState extends Phaser.State {
   }
 
   private drawDropBoxes() {
-    const graphics = this.game.add.graphics(0, 0);
-    graphics.lineStyle(2, 0x0000ff, 1);
-    graphics.drawRect(
-      camisetaPos.minX,
-      camisetaPos.minY,
-      camisetaPos.width,
-      camisetaPos.height
-    );
-    graphics.drawRect(
-      pantalonPos.minX,
-      pantalonPos.minY,
-      pantalonPos.width,
-      pantalonPos.height
-    );
+    visualizeAreas(this.game, [camisetaArea, pantalonArea]);
   }
 
   private addDraggableSprite(params: {
@@ -125,13 +106,13 @@ class ClothesState extends Phaser.State {
     sprite: Phaser.Sprite
   ) {
     const { goalPos } = spriteState;
-    const maxX = goalPos.minX + goalPos.width;
-    const maxY = goalPos.minY + goalPos.height;
+    const maxX = goalPos.startX + goalPos.width;
+    const maxY = goalPos.startY + goalPos.height;
     const { centerX, centerY } = sprite;
     if (
-      centerX > goalPos.minX &&
+      centerX > goalPos.startX &&
       centerX < maxX &&
-      centerY > goalPos.minY &&
+      centerY > goalPos.startY &&
       centerY < maxY
     ) {
       sprite.input.enabled = false;

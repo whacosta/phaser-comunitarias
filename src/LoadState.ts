@@ -2,6 +2,7 @@ import MenuState from './MenuState.ts';
 import { alto, ancho } from './dimens.ts';
 
 import childrenLogoPath from './assets/logo-children.png';
+import casasBgPath from './assets/casas_bg.png';
 
 import cepilloIconPath from './assets/index_menu/cepillo dental.png';
 import doctorIconPath from './assets/index_menu/doctor.png';
@@ -45,6 +46,7 @@ class LoadState extends Phaser.State {
     this.load.setPreloadSprite(loadingBar);
 
     this.game.load.image('logo', childrenLogoPath);
+    this.game.load.image('casas_bg', casasBgPath);
 
     this.game.load.image('cepillo_icon', cepilloIconPath);
     this.game.load.image('doctor_icon', doctorIconPath);
