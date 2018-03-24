@@ -16,6 +16,11 @@ import AflatounAstronauta from './AflatounAstronauta.ts';
 import DefinisteTuSueno from './DefinisteTuSueno.ts';
 import ProfesionesArrastrables from './ProfesionesArrastrables.js';
 import ProfesionesPintables from './ProfesionesPintables.js';
+import LosValores1 from './LosValores1.js';
+import ComoMeAlimento from './ComoMeAlimento.js';
+import IdentificandoAflatoun from './IdentificandoAflatoun.js';
+import CompletarAflatoun2 from './CompletarAflatoun2.js';
+import CompletarAflatoun1 from './CompletarAflatoun1.js';
 
 import Video1 from './assets/video1.mp4';
 
@@ -36,6 +41,11 @@ function start() {
   game.state.add('AflatounAstronauta', new AflatounAstronauta());
   game.state.add('ProfesionesArrastrables', ProfesionesArrastrables);
   game.state.add('ProfesionesPintables', ProfesionesPintables);
+  game.state.add('LosValores1', LosValores1);
+  game.state.add('ComoMeAlimento', ComoMeAlimento);
+  game.state.add('IdentificandoAflatoun', IdentificandoAflatoun);
+  game.state.add('CompletarAflatoun2', CompletarAflatoun2);
+  game.state.add('CompletarAflatoun1', CompletarAflatoun1);
   game.state.add('DefinisteTuSueno', DefinisteTuSueno);
   game.state.add('Casas', CasasState);
   game.state.start('Login');
