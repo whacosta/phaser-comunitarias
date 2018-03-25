@@ -4,6 +4,7 @@ var contenedorJuego;
 var opcionesChild;
 var target = null;
 var X, Y, opciones, contenedor, puntaje, siguienteJuego, barra, moneda, imagen;
+var flagUp = false;
 //var floodfill = require('./../lib/floodfill.js');
 function comenzarJuegoExterno() {
   document.getElementsByTagName('canvas')[0].style.display = 'none';
@@ -27,40 +28,63 @@ function comenzarJuegoExterno() {
     contenedor.addEventListener('touchstart', handlestart);
     contenedor.addEventListener('touchmove', handlemove);
     contenedor.addEventListener('touchend', handleup);
+    contenedor.addEventListener('mousedown', handlestart);
+    contenedor.addEventListener('mousemove', handlemove);
+    contenedor.addEventListener('mouseup', handleup);
     adjust(opcionesChild, 1);
     adjust([puntaje], 1);
     siguienteJuego.addEventListener('click', siguienteJuegoPhaser);
   }
   function handlestart(e) {
     e.preventDefault();
+    var egeneral;
+    if (e.type == 'touchstart') {
+      egeneral = e.touches[0];
+    } else {
+      egeneral = e;
+    }
     if (
       target == null &&
-      (e.touches[0].target.getAttribute('class') == 'opcion' ||
-        e.touches[0].target.getAttribute('class') == 'colocado')
+      (egeneral.target.getAttribute('class') == 'opcion' ||
+        egeneral.target.getAttribute('class') == 'colocado')
     ) {
-      target = e.touches[0].target;
-      X = e.touches[0].clientX - opciones.getBoundingClientRect().left;
-      Y = e.touches[0].clientY - opciones.getBoundingClientRect().top;
+      target = egeneral.target;
+      flagUp = true;
+      X = egeneral.clientX - opciones.getBoundingClientRect().left;
+      Y = egeneral.clientY - opciones.getBoundingClientRect().top;
     }
   }
   function handlemove(e) {
     e.preventDefault();
-    if (e.touches[0].target == target) {
+    var egeneral;
+    if (e.type == 'touchmove') {
+      egeneral = e.touches[0];
+    } else {
+      egeneral = e;
+    }
+
+    if (target && flagUp) {
       var tx =
-        parseInt(e.touches[0].clientX - opciones.getBoundingClientRect().left) -
+        parseInt(egeneral.clientX - opciones.getBoundingClientRect().left) -
         parseInt(X);
       var ty =
-        parseInt(e.touches[0].clientY - opciones.getBoundingClientRect().top) -
+        parseInt(egeneral.clientY - opciones.getBoundingClientRect().top) -
         parseInt(Y);
       target.style.transform = 'translate(' + tx + 'px,' + ty + 'px)';
     }
   }
   function handleup(e) {
     e.preventDefault();
+    var egeneral;
+    if (e.type == 'touchend') {
+      egeneral = e.changedTouches[0];
+    } else {
+      egeneral = e;
+    }
     if (e.target == target) {
       var elementos = document.elementsFromPoint(
-        e.changedTouches[0].clientX,
-        e.changedTouches[0].clientY
+        egeneral.clientX,
+        egeneral.clientY
       );
       if (
         (elementos[1].getAttribute('class') == 'palabrasAflatoun' ||
@@ -106,6 +130,7 @@ function comenzarJuegoExterno() {
             'siguienteJuegoAnimacion 1s infinite';
         }
       }
+      flagUp = false;
       target.style.transition = '0.3s';
       target.style.transform = 'translate(0px,0px)';
       setTimeout(function() {

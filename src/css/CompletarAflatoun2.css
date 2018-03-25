@@ -53,6 +53,7 @@ body {
   user-select: none;
   font-weight: bold;
   font-family: 'Comic Sans MS', cursive, sans-serif;
+  transition: 0s;
 }
 
 .trivia {

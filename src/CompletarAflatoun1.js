@@ -3,6 +3,7 @@ var CompletarAflatoun1CSS = require('./css/CompletarAflatoun1.css');
 var contenedorJuego;
 var target = null;
 var X, Y, opciones, contenedor, siguienteJuego, puntaje, moneda, barra;
+var flagUp = false;
 
 //var floodfill = require('./../lib/floodfill.js');
 function comenzarJuegoExterno() {
@@ -24,44 +25,74 @@ function comenzarJuegoExterno() {
     contenedor.addEventListener('touchstart', handlestart);
     contenedor.addEventListener('touchmove', handlemove);
     contenedor.addEventListener('touchend', handleup);
+    contenedor.addEventListener('mousedown', handlestart);
+    contenedor.addEventListener('mousemove', handlemove);
+    contenedor.addEventListener('mouseup', handleup);
     siguienteJuego.addEventListener('click', siguienteJuegoPhaser);
     adjust([puntaje], 1);
   }
   function handlestart(e) {
     e.preventDefault();
-    if (
-      target == null &&
-      e.touches[0].target.getAttribute('class') == 'opcion'
-    ) {
-      target = e.touches[0].target;
-      X = e.touches[0].clientX - opciones.getBoundingClientRect().left;
-      Y = e.touches[0].clientY - opciones.getBoundingClientRect().top;
+    if (e.target.getAttribute('class') == 'opcion' && target == null) {
+      var clientX, clientY;
+      if (e.type == 'touchstart') {
+        clientX = e.touches[0].clientX;
+        clientY = e.touches[0].clientY;
+      } else {
+        clientX = e.clientX;
+        clientY = e.clientY;
+      }
+
+      target = e.target;
+      flagUp = true;
+      X = clientX - opciones.getBoundingClientRect().left;
+      Y = clientY - opciones.getBoundingClientRect().top;
     }
   }
   function handlemove(e) {
     e.preventDefault();
-    if (e.touches[0].target == target) {
+    if (target != null && flagUp) {
+      var clientX, clientY;
+      if (e.type == 'touchmove') {
+        clientX = e.touches[0].clientX;
+        clientY = e.touches[0].clientY;
+      } else {
+        clientX = e.clientX;
+        clientY = e.clientY;
+      }
       var tx =
-        parseInt(e.touches[0].clientX - opciones.getBoundingClientRect().left) -
-        parseInt(X);
+        parseInt(clientX - opciones.getBoundingClientRect().left) - parseInt(X);
       var ty =
-        parseInt(e.touches[0].clientY - opciones.getBoundingClientRect().top) -
-        parseInt(Y);
+        parseInt(clientY - opciones.getBoundingClientRect().top) - parseInt(Y);
       target.style.transform = 'translate(' + tx + 'px,' + ty + 'px)';
     }
   }
   function handleup(e) {
     e.preventDefault();
-    if (e.target == target) {
-      var elementos = document.elementsFromPoint(
-        e.changedTouches[0].clientX,
-        e.changedTouches[0].clientY
-      );
-      if (elementos[1].getAttribute('class') == 'cajaBlanca') {
-        elementos[1].style.animation = null;
-        if (elementos[1].getAttribute('data-respuesta') == target.innerHTML) {
-          elementos[1].innerHTML = target.innerHTML;
-          elementos[1].style.width = 'auto';
+    var backElement;
+    if (target) {
+      var x, y;
+
+      if (e.type == 'touchend') {
+        x = e.changedTouches[0].clientX;
+        y = e.changedTouches[0].clientY;
+      } else {
+        x = e.clientX;
+        y = e.clientY;
+      }
+      var elementos = document.elementsFromPoint(x, y);
+      if (
+        elementos[1].getAttribute('class') == 'cajaBlanca' ||
+        elementos[0].getAttribute('class') == 'cajaBlanca'
+      ) {
+        backElement =
+          elementos[0].getAttribute('class') == 'cajaBlanca'
+            ? elementos[0]
+            : elementos[1];
+        backElement.style.animation = null;
+        if (backElement.getAttribute('data-respuesta') == target.innerHTML) {
+          backElement.innerHTML = target.innerHTML;
+          backElement.style.width = 'auto';
           target.parentElement.removeChild(target);
           opciones.style.maxHeight = '900px';
           if (completado()) {
@@ -76,10 +107,11 @@ function comenzarJuegoExterno() {
               'siguienteJuegoAnimacion 1s infinite';
           }
         } else {
-          void elementos[1].offsetWidth;
-          elementos[1].style.animation = 'incorrecta 0.2s 1';
+          void backElement.offsetWidth;
+          backElement.style.animation = 'incorrecta 0.2s 1';
         }
       }
+      flagUp = false;
       target.style.transition = '0.3s';
       target.style.transform = 'translate(0px,0px)';
       setTimeout(function() {
