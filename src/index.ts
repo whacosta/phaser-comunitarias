@@ -3,6 +3,7 @@ import 'pixi.js';
 import 'p2';
 import 'phaser';
 
+import { ancho, alto } from './dimens.ts';
 import BootState from './BootState.ts';
 import VideoState from './VideoState.ts';
 import GameState from './GameState.ts';
@@ -25,12 +26,7 @@ import CompletarAflatoun1 from './CompletarAflatoun1.js';
 import Video1 from './assets/video1.mp4';
 
 function start() {
-  const game = new Phaser.Game(
-    window.innerWidth,
-    window.innerHeight,
-    Phaser.AUTO,
-    'game'
-  );
+  const game = new Phaser.Game(ancho, alto, Phaser.AUTO, 'game');
 
   game.state.add('Login', new LoginState());
   game.state.add('Boot', new BootState());
