@@ -16,6 +16,7 @@ import AflatounAstronauta from './AflatounAstronauta.ts';
 import DefinisteTuSueno from './DefinisteTuSueno.ts';
 import ProfesionesArrastrables from './ProfesionesArrastrables.js';
 import ProfesionesPintables from './ProfesionesPintables.js';
+import EligeActividad from './EligeActividad.ts';
 
 import Video1 from './assets/video1.mp4';
 
@@ -32,6 +33,7 @@ function start() {
   game.state.add('Preload', new LoadState());
   game.state.add('Game', new GameState());
   game.state.add('BoyGirl', new BoyGirlState());
+  game.state.add('EligeActividad', new EligeActividad());
   game.state.add('Video', new VideoState(Video1, 'ProfesionesArrastrables'));
   game.state.add('AflatounAstronauta', new AflatounAstronauta());
   game.state.add('ProfesionesArrastrables', ProfesionesArrastrables);
