@@ -96,7 +96,7 @@ class EligeCaracteristicas extends Phaser.State {
 
   listenerG() {
     this.cualidad1 = true;
-    if (this.cualidad1 & this.cualidad2 & this.cualidad3) {
+    if (this.cualidad1 && this.cualidad2 && this.cualidad3) {
       this.game.state.add('EligeActividad', new EligeActividad());
       this.game.state.start('EligeActividad');
     }
@@ -104,14 +104,14 @@ class EligeCaracteristicas extends Phaser.State {
 
   listenerP() {
     this.cualidad2 = true;
-    if (this.cualidad1 & this.cualidad2 & this.cualidad3) {
+    if (this.cualidad1 && this.cualidad2 && this.cualidad3) {
       this.game.state.add('EligeActividad', new EligeActividad());
       this.game.state.start('EligeActividad');
     }
   }
   listenerF() {
     this.cualidad3 = true;
-    if (this.cualidad1 & this.cualidad2 & this.cualidad3) {
+    if (this.cualidad1 && this.cualidad2 && this.cualidad3) {
       this.game.state.add('EligeActividad', new EligeActividad());
       this.game.state.start('EligeActividad');
     }
