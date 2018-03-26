@@ -2,6 +2,7 @@ import ClothesState from './ClothesState.ts';
 import EligeActividad from './EligeActividad.ts';
 import boyPath from './assets/boy.png';
 import girlPath from './assets/girl.png';
+import { alto, ancho } from './dimens.ts';
 
 class BoyGirlState extends Phaser.State {
   preload() {
@@ -10,8 +11,18 @@ class BoyGirlState extends Phaser.State {
   }
 
   create() {
-    this.game.add.button(80, 80, 'boy', this.choose(true));
-    this.game.add.button(760, 80, 'girl', this.choose(false));
+    this.game.add.button(
+      ancho * 2 / 10,
+      alto * 1 / 4,
+      'boy',
+      this.choose(true)
+    );
+    this.game.add.button(
+      ancho * 6 / 10,
+      alto * 1 / 4,
+      'girl',
+      this.choose(false)
+    );
   }
 
   choose(isBoy: boolean) {
