@@ -28,8 +28,8 @@ class EligeActividad extends Phaser.State {
 
   create() {
     let fondo;
-    let alto;
-    let ancho;
+    let alto1;
+    let ancho1;
 
     let act1;
     let act2;
@@ -42,37 +42,37 @@ class EligeActividad extends Phaser.State {
     let act9;
 
     fondo = this.game.add.image(0, 0, 'fondo');
-    ancho = fondo.width;
-    alto = fondo.height;
+    ancho1 = fondo.width;
+    alto1 = fondo.height;
 
-    act1 = this.game.add.image(ancho / 10, alto * 2 / 10, 'cuali1');
+    act1 = this.game.add.image(ancho1 / 10, alto1 * 2 / 10, 'cuali1');
     act1.inputEnabled = true;
 
-    act2 = this.game.add.image(ancho / 10, alto * 5 / 10, 'cuali1');
+    act2 = this.game.add.image(ancho1 / 10, alto1 * 5 / 10, 'cuali1');
     act2.inputEnabled = true;
 
-    act3 = this.game.add.image(ancho / 10, alto * 8 / 10, 'cuali1');
+    act3 = this.game.add.image(ancho1 / 10, alto1 * 8 / 10, 'cuali1');
     act3.inputEnabled = true;
 
-    act4 = this.game.add.image(ancho * 4 / 10, alto * 2 / 10, 'cuali1');
+    act4 = this.game.add.image(ancho1 * 4 / 10, alto1 * 2 / 10, 'cuali1');
     act4.inputEnabled = true;
 
-    act5 = this.game.add.image(ancho * 4 / 10, alto * 5 / 10, 'cuali1');
+    act5 = this.game.add.image(ancho1 * 4 / 10, alto1 * 5 / 10, 'cuali1');
     act5.inputEnabled = true;
 
-    act6 = this.game.add.image(ancho * 4 / 10, alto * 8 / 10, 'cuali1');
+    act6 = this.game.add.image(ancho1 * 4 / 10, alto1 * 8 / 10, 'cuali1');
     act6.inputEnabled = true;
 
-    act7 = this.game.add.image(ancho * 7 / 10, alto * 2 / 10, 'cuali1');
+    act7 = this.game.add.image(ancho1 * 7 / 10, alto1 * 2 / 10, 'cuali1');
     act7.inputEnabled = true;
 
-    act8 = this.game.add.image(ancho * 7 / 10, alto * 5 / 10, 'cuali1');
+    act8 = this.game.add.image(ancho1 * 7 / 10, alto1 * 5 / 10, 'cuali1');
     act8.inputEnabled = true;
 
-    act9 = this.game.add.image(ancho * 7 / 10, alto * 8 / 10, 'cuali1');
+    act9 = this.game.add.image(ancho1 * 7 / 10, alto1 * 8 / 10, 'cuali1');
     act9.inputEnabled = true;
 
-    this.texto = this.game.add.text(ancho / 3, 16, '', { fill: 'black' });
+    this.texto = this.game.add.text(ancho1 / 3, 16, '', { fill: 'black' });
     this.texto.text = 'Elige una actividad';
 
     act1.events.onInputDown.add(this.listenerA1, this);
@@ -87,48 +87,48 @@ class EligeActividad extends Phaser.State {
   }
 
   listenerA1() {
-    //Colocar aqui a que actividad se dirige
+    // Colocar aqui a que actividad se dirige
     this.game.state.add('BoyGirl', new BoyGirlState());
     this.game.state.start('BoyGirl');
   }
 
   listenerA2() {
-    //Colocar aqui a que actividad se dirige
+    // Colocar aqui a que actividad se dirige
     this.game.state.add('EligeAflatoun', new EligeAflatoun());
     this.game.state.start('EligeAflatoun');
   }
   listenerA3() {
-    //Colocar aqui a que actividad se dirige
+    // Colocar aqui a que actividad se dirige
     this.game.state.add('EncuentraAflatoun', new EncuentraAflatoun());
     this.game.state.start('EncuentraAflatoun');
   }
   listenerA4() {
-    //Colocar aqui a que actividad se dirige
+    // Colocar aqui a que actividad se dirige
     this.game.state.add('AflatounAstronauta', new AflatounAstronauta());
     this.game.state.start('AflatounAstronauta');
   }
   listenerA5() {
-    //Colocar aqui a que actividad se dirige
+    // Colocar aqui a que actividad se dirige
     this.game.state.add('DefinisteTuSueno', new DefinisteTuSueno());
     this.game.state.start('DefinisteTuSueno');
   }
   listenerA6() {
-    //Colocar aqui a que actividad se dirige
+    // Colocar aqui a que actividad se dirige
     this.game.state.add('EligeCaracteristicas', new EligeCaracteristicas());
     this.game.state.start('EligeCaracteristicas');
   }
   listenerA7() {
-    //Colocar aqui a que actividad se dirige
+    // Colocar aqui a que actividad se dirige
     this.game.state.add('BoyGirl', new BoyGirlState());
     this.game.state.start('BoyGirl');
   }
   listenerA8() {
-    //Colocar aqui a que actividad se dirige
+    // Colocar aqui a que actividad se dirige
     this.game.state.add('BoyGirl', new BoyGirlState());
     this.game.state.start('BoyGirl');
   }
   listenerA9() {
-    //Colocar aqui a que actividad se dirige
+    // Colocar aqui a que actividad se dirige
     this.game.state.add('BoyGirl', new BoyGirlState());
     this.game.state.start('BoyGirl');
   }
