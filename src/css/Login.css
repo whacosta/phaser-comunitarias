@@ -11,34 +11,53 @@ body {
   text-align: center;
   background-color: rgba(255, 255, 255, 0.85);
   width: 70%;
-  height: 600px;
+  height: 70%;
 }
 
-.logo {
-  margin: 50px 10px;
+div.centered-relative {
+  margin-left: auto;
+  margin-right: auto;
+}
+.responsive-img {
+  width: 100%;
+  height: auto;
+}
+
+.logo-container {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  width: 30%;
+}
+
+.llamas {
+  margin-top: 15px;
+  width: 40%;
 }
 
 .codigo {
-  width: 400px;
-  margin-top: 50px;
+  width: 50%;
 }
 
 .codigo input {
-  height: 50px;
+  height: 10%;
   font-size: 18px;
   background-color: rgba(255, 255, 255, 0.11);
   border: none;
   border-bottom: 2px solid rgba(0, 0, 0, 0.38);
 }
 
-.ayuda {
-  margin-top: 30px;
+#error-text {
+  color: #ff0000;
+  font-size: 14px%;
 }
-.ayuda a {
-  font-size: 1.7rem;
+
+.ayuda-text {
+  margin-top: 16%;
+  font-size: 16px;
 }
+
 .login button {
-  margin-top: 40px;
+  margin-top: 1%;
   color: #a4056a;
   background-color: #e4df44;
   border-color: #a4056a;
@@ -94,7 +113,7 @@ body {
 
 .btn-group-lg > .btn,
 .btn-lg {
-  padding: 10px 16px;
+  padding: 2% 3%;
   font-size: 18px;
   line-height: 1.3333333;
   border-radius: 6px;
