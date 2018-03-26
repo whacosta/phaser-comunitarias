@@ -3,6 +3,7 @@ import { alto, ancho } from './dimens.ts';
 
 import childrenLogoPath from './assets/logo-children.png';
 import casasBgPath from './assets/casas_bg.png';
+import GameBackground1Path from './assets/bg1.png';
 
 import cepilloIconPath from './assets/index_menu/cepillo dental.png';
 import doctorIconPath from './assets/index_menu/doctor.png';
@@ -47,6 +48,7 @@ class LoadState extends Phaser.State {
 
     this.game.load.image('logo', childrenLogoPath);
     this.game.load.image('casas_bg', casasBgPath);
+    this.game.load.image('bg1', GameBackground1Path);
 
     this.game.load.image('cepillo_icon', cepilloIconPath);
     this.game.load.image('doctor_icon', doctorIconPath);

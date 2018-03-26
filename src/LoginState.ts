@@ -14,7 +14,7 @@ class LoginState extends HtmlState {
 
   private showLoginError(msg: string) {
     const errorText = document.getElementById('error-text');
-    errorText.style.visibility = 'visible';
+    errorText.style.display = 'block';
     errorText.innerText = msg;
   }
 
