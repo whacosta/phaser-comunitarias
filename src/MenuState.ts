@@ -1,6 +1,5 @@
 import GameState from './GameState.ts';
 import { alto, ancho } from './dimens.ts';
-import EligeActividad from './EligeActividad.ts';
 
 class MenuState extends Phaser.State {
   create() {
@@ -57,9 +56,7 @@ class MenuState extends Phaser.State {
   render() {}
 
   playTheGame() {
-    //this.game.state.start('BoyGirl');
-    this.game.state.add('EligeActividad', new EligeActividad());
-    this.game.state.start('EligeActividad');
+    this.game.state.start('BoyGirl');
   }
 
   btnAvatarAction() {}

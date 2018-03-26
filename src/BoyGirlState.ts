@@ -1,5 +1,4 @@
 import ClothesState from './ClothesState.ts';
-import EligeActividad from './EligeActividad.ts';
 import boyPath from './assets/boy.png';
 import girlPath from './assets/girl.png';
 import { alto, ancho } from './dimens.ts';
@@ -27,10 +26,8 @@ class BoyGirlState extends Phaser.State {
 
   choose(isBoy: boolean) {
     return () => {
-      //this.game.state.add('Clothes', new ClothesState());
-      this.game.state.add('EligeActividad', new EligeActividad());
-      //this.game.state.start('Clothes');
-      this.game.state.start('EligeActividad');
+      this.game.state.add('Clothes', new ClothesState());
+      this.game.state.start('Clothes');
     };
   }
 }
