@@ -22,6 +22,7 @@ import ComoMeAlimento from './ComoMeAlimento.js';
 import IdentificandoAflatoun from './IdentificandoAflatoun.js';
 import CompletarAflatoun2 from './CompletarAflatoun2.js';
 import CompletarAflatoun1 from './CompletarAflatoun1.js';
+import Memoria from './Memoria.js';
 
 import Video1 from './assets/video1.mp4';
 
@@ -43,6 +44,7 @@ function start() {
   game.state.add('CompletarAflatoun2', CompletarAflatoun2);
   game.state.add('CompletarAflatoun1', CompletarAflatoun1);
   game.state.add('DefinisteTuSueno', DefinisteTuSueno);
+  game.state.add('Memoria', Memoria);
   game.state.add('Casas', CasasState);
   game.state.start('Login');
 }
