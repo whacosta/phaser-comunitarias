@@ -5,6 +5,7 @@ import 'phaser';
 
 import { ancho, alto } from './dimens.ts';
 import BootState from './BootState.ts';
+import ChatState from './ChatState.ts';
 import VideoState from './VideoState.ts';
 import GameState from './GameState.ts';
 import BoyGirlState from './BoyGirlState.ts';
@@ -46,6 +47,7 @@ function start() {
   game.state.add('DefinisteTuSueno', DefinisteTuSueno);
   game.state.add('Memoria', Memoria);
   game.state.add('Casas', CasasState);
+  game.state.add('Chat', new ChatState());
   game.state.start('Login');
 }
 

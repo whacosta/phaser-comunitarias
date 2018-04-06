@@ -17,11 +17,16 @@ class MenuState extends Phaser.State {
     icon.width = icon.height * 1.0724;
   }
 
-  private addBottomButton(index: number, resourceName: string) {
+  private addBottomButton(
+    index: number,
+    resourceName: string,
+    onClick?: () => void
+  ) {
     const icon = this.game.add.button(
       ancho * index / 6,
       alto * 9 / 10,
-      resourceName
+      resourceName,
+      onClick
     );
     icon.anchor.setTo(0.5, 0.5);
     icon.height = alto * 15 / 160;
@@ -118,13 +123,17 @@ class MenuState extends Phaser.State {
     this.addBottomButton(2, 'chancho');
     this.addBottomButton(3, 'cofre');
     this.addBottomButton(4, 'tienda');
-    this.addBottomButton(5, 'chat');
+    this.addBottomButton(5, 'chat', this.openChat.bind(this));
   }
 
   render() {}
 
   playTheGame() {
     this.game.state.start('BoyGirl');
+  }
+
+  openChat() {
+    this.game.state.start('Chat');
   }
 
   btnAvatarAction() {}
