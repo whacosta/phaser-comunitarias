@@ -239,7 +239,7 @@ function comenzarJuegoExterno() {
     window.removeEventListener('resize', handleResize);
     document.body.removeChild(document.getElementById('contenedorJuego'));
     document.getElementsByTagName('canvas')[0].style.display = 'block';
-    ProfesionesArrastrables.game.state.start('DefinisteTuSueno');
+    ProfesionesArrastrables.game.state.start('EligeActividad');
   }
   function handleTouchStart(e) {
     e.preventDefault();

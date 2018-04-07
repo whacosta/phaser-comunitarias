@@ -161,7 +161,7 @@ function comenzarJuegoExterno() {
   function siguienteJuegoPhaser() {
     document.body.removeChild(document.getElementById('contenedorJuego'));
     document.getElementsByTagName('canvas')[0].style.display = 'block';
-    CompletarAflatoun2.game.state.start('DefinisteTuSueno');
+    CompletarAflatoun2.game.state.start('EligeActividad');
   }
 }
 

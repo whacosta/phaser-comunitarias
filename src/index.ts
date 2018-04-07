@@ -24,6 +24,7 @@ import IdentificandoAflatoun from './IdentificandoAflatoun.js';
 import CompletarAflatoun2 from './CompletarAflatoun2.js';
 import CompletarAflatoun1 from './CompletarAflatoun1.js';
 import Memoria from './Memoria.js';
+import EligeActividad from './EligeActividad.ts';
 
 import Video1 from './assets/video1.mp4';
 
@@ -35,7 +36,7 @@ function start() {
   game.state.add('Preload', new LoadState());
   game.state.add('Game', new GameState());
   game.state.add('BoyGirl', new BoyGirlState());
-  game.state.add('Video', new VideoState(Video1, 'ProfesionesArrastrables'));
+  game.state.add('Video', new VideoState(Video1, 'EligeActividad'));
   game.state.add('AflatounAstronauta', new AflatounAstronauta());
   game.state.add('ProfesionesArrastrables', ProfesionesArrastrables);
   game.state.add('ProfesionesPintables', ProfesionesPintables);
@@ -48,6 +49,7 @@ function start() {
   game.state.add('Memoria', Memoria);
   game.state.add('Casas', CasasState);
   game.state.add('Chat', new ChatState());
+  game.state.add('EligeActividad', EligeActividad);
   game.state.start('Login');
 }
 
