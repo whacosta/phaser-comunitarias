@@ -26,11 +26,14 @@ class EncuentraAflatoun extends Phaser.State {
     afla.inputEnabled = true; // Habilita interaccion con aflatoun
 
     this.texto = this.game.add.text(250, 16, '', { fill: '#ffffff' });
-    afla.events.onInputDown.add(this.listener, this);
+    afla.events.onInputDown.add(this.listener.bind(this), this);
   }
 
   listener() {
     this.texto.text = 'Has encontrado a Aflatoun!';
+    setTimeout(() => {
+      this.game.state.start('EligeActividad');
+    }, 3000);
   }
 }
 

@@ -1,10 +1,12 @@
 // Minijuego de Elegir Caracteristicas
 
-import ImagenFondo from './assets/fondojuego.png';
+import ImagenFondo from './assets/bg1.png';
 import Cualidad1i from './assets/cual1.png';
 import Cualidad2i from './assets/cual2.png';
 import Cualidad3i from './assets/cual3.png';
 import EligeActividad from './EligeActividad.ts';
+import { setBackground } from './utils/ImageUtils.ts';
+import { alto, ancho } from './dimens.ts';
 
 class EligeCaracteristicas extends Phaser.State {
   preload() {
@@ -20,10 +22,6 @@ class EligeCaracteristicas extends Phaser.State {
   private cualidad3;
 
   create() {
-    let fondo;
-    let alto;
-    let ancho;
-
     let afc1;
     let afc2;
     let afenunciado;
@@ -42,9 +40,7 @@ class EligeCaracteristicas extends Phaser.State {
     this.cualidad2 = false;
     this.cualidad3 = false;
 
-    fondo = this.game.add.image(0, 0, 'fondo');
-    ancho = fondo.width;
-    alto = fondo.height;
+    setBackground(this.game);
 
     afc1 = this.game.add.image(ancho / 10, alto * 2 / 10, 'cuali1');
     afc1.inputEnabled = true;

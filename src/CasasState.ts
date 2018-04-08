@@ -32,7 +32,7 @@ class CasasState extends Phaser.State {
   }
 
   goToNextState() {
-    this.game.state.start('BoyGirl');
+    this.game.state.start('EligeActividad');
   }
 }
 

@@ -87,7 +87,7 @@ function comenzarJuegoExterno() {
   function siguienteJuegoPhaser() {
     document.body.removeChild(document.getElementById('contenedorJuego'));
     document.getElementsByTagName('canvas')[0].style.display = 'block';
-    ComoMeAlimento.game.state.start('DefinisteTuSueno');
+    ComoMeAlimento.game.state.start('EligeActividad');
   }
 }
 

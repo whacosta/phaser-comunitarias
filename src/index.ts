@@ -5,6 +5,7 @@ import 'phaser';
 
 import { ancho, alto } from './dimens.ts';
 import BootState from './BootState.ts';
+import ChatState from './ChatState.ts';
 import VideoState from './VideoState.ts';
 import GameState from './GameState.ts';
 import BoyGirlState from './BoyGirlState.ts';
@@ -22,6 +23,8 @@ import ComoMeAlimento from './ComoMeAlimento.js';
 import IdentificandoAflatoun from './IdentificandoAflatoun.js';
 import CompletarAflatoun2 from './CompletarAflatoun2.js';
 import CompletarAflatoun1 from './CompletarAflatoun1.js';
+import Memoria from './Memoria.js';
+import EligeActividad from './EligeActividad.ts';
 
 import Video1 from './assets/video1.mp4';
 
@@ -33,7 +36,7 @@ function start() {
   game.state.add('Preload', new LoadState());
   game.state.add('Game', new GameState());
   game.state.add('BoyGirl', new BoyGirlState());
-  game.state.add('Video', new VideoState(Video1, 'ProfesionesArrastrables'));
+  game.state.add('Video', new VideoState(Video1, 'EligeActividad'));
   game.state.add('AflatounAstronauta', new AflatounAstronauta());
   game.state.add('ProfesionesArrastrables', ProfesionesArrastrables);
   game.state.add('ProfesionesPintables', ProfesionesPintables);
@@ -43,7 +46,10 @@ function start() {
   game.state.add('CompletarAflatoun2', CompletarAflatoun2);
   game.state.add('CompletarAflatoun1', CompletarAflatoun1);
   game.state.add('DefinisteTuSueno', DefinisteTuSueno);
+  game.state.add('Memoria', Memoria);
   game.state.add('Casas', CasasState);
+  game.state.add('Chat', new ChatState());
+  game.state.add('EligeActividad', EligeActividad);
   game.state.start('Login');
 }
 

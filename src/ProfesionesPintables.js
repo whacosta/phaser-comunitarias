@@ -105,7 +105,7 @@ function comenzarJuegoExterno() {
     window.removeEventListener('resize', onresize2);
     document.body.removeChild(document.getElementById('contenedorJuego'));
     document.getElementsByTagName('canvas')[0].style.display = 'block';
-    ProfesionesPintables.game.state.start('DefinisteTuSueno');
+    ProfesionesPintables.game.state.start('EligeActividad');
   }
   function inicializarPlantillas() {
     var contenedorImagenList = plantillas.getElementsByClassName(

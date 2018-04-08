@@ -3,6 +3,7 @@ import camisetaSpritePath from './assets/camiseta.png';
 import pantalonSpritePath from './assets/pantalon.png';
 import Area2D, { visualizeAreas } from './utils/Area2D.ts';
 import { alto, ancho } from './dimens.ts';
+import { setBackground } from './utils/ImageUtils.ts';
 
 interface SpriteState {
   readonly goalPos: Area2D;
@@ -61,6 +62,7 @@ class ClothesState extends Phaser.State {
   }
 
   create() {
+    setBackground(this.game);
     const cuerpo = this.game.add.sprite(cuerpoPos.x, cuerpoPos.y, 'cuerpo');
     cuerpo.height = alto * 6 / 10;
     cuerpo.width = cuerpo.height * 4 / 10;

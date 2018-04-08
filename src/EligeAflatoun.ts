@@ -1,6 +1,6 @@
 // Minijuego de Encontrar a Aflatoun
 
-import ImagenFondo from './assets/fondojuego.png';
+import ImagenFondo from './assets/bg1.png';
 import Aflatoun from './assets/aflatoun.png';
 import Sonic from './assets/sonic.png';
 import Mario from './assets/mario.png';
@@ -57,6 +57,9 @@ class EligeAflatoun extends Phaser.State {
 
   listenerG() {
     this.texto.text = 'Has encontrado a Aflatoun!';
+    setTimeout(function() {
+      this.game.state.start('EligeActividad');
+    }, 3000);
   }
 
   listenerP() {
