@@ -45,7 +45,7 @@ class ProfesionesCruzadas extends Phaser.State {
   }
 
   private indicador;
-  private texto;
+  // private texto;
   private myLine;
   private myLine2;
   private myLine3;
@@ -68,22 +68,24 @@ class ProfesionesCruzadas extends Phaser.State {
     act1.inputEnabled = true;
 
     // create the line
-    let line = new Phaser.Line(0, 100, 800, 100);
 
     act3 = this.game.add.image(ancho / 10, alto * 8 / 10, 'act3');
     act3.anchor.set(0.5);
     act3.inputEnabled = true;
 
     // create the graphics
-    let graphicsLine = this.game.make.graphics(0, 0);
+    const graphicsLine = this.game.make.graphics(0, 0);
     graphicsLine.lineStyle(1, 0x000000, 1);
     graphicsLine.moveTo(act1.x, act1.y);
     graphicsLine.lineTo(act3.x, act3.y);
     graphicsLine.endFill();
-    
 
     // create the image...
-    this.myLine = this.game.add.image(act1.x, act1.y, graphicsLine.generateTexture());
+    this.myLine = this.game.add.image(
+      act1.x,
+      act1.y,
+      graphicsLine.generateTexture()
+    );
     this.myLine.visible = false;
     graphicsLine.destroy();
 
@@ -112,54 +114,58 @@ class ProfesionesCruzadas extends Phaser.State {
     act9.inputEnabled = true;
 
     // create the line
-    let line2 = new Phaser.Line(0, 100, 800, 100);
 
-    let graphicsLine2 = this.game.make.graphics(0, 0);
+    const graphicsLine2 = this.game.make.graphics(0, 0);
     graphicsLine2.lineStyle(1, 0x000000, 1);
     graphicsLine2.moveTo(act4.x, act4.y);
     graphicsLine2.lineTo(act7.x, act7.y);
     graphicsLine2.endFill();
-    
 
     // create the image...
-    this.myLine2 = this.game.add.image(act4.x, act4.y, graphicsLine2.generateTexture());
+    this.myLine2 = this.game.add.image(
+      act4.x,
+      act4.y,
+      graphicsLine2.generateTexture()
+    );
     this.myLine2.visible = false;
     graphicsLine2.destroy();
 
-
     // create the line
-    let line3 = new Phaser.Line(0, 100, 800, 100);
 
-    let graphicsLine3 = this.game.make.graphics(0, 0);
+    const graphicsLine3 = this.game.make.graphics(0, 0);
     graphicsLine3.lineStyle(1, 0x000000, 1);
     graphicsLine3.moveTo(act6.x, act6.y);
     graphicsLine3.lineTo(act9.x, act9.y);
     graphicsLine3.endFill();
-    
+
     // create the image...
-    this.myLine3 = this.game.add.image(act6.x, act6.y, graphicsLine3.generateTexture());
+    this.myLine3 = this.game.add.image(
+      act6.x,
+      act6.y,
+      graphicsLine3.generateTexture()
+    );
     this.myLine3.visible = false;
     graphicsLine3.destroy();
 
     // create the line
-    let line4 = new Phaser.Line(0, 100, 800, 100);
 
-    let graphicsLine4 = this.game.make.graphics(0, 0);
+    const graphicsLine4 = this.game.make.graphics(0, 0);
     graphicsLine4.lineStyle(1, 0x000000, 1);
     graphicsLine4.moveTo(act5.x, act5.y);
     graphicsLine4.lineTo(act8.x, act8.y);
     graphicsLine4.endFill();
-    
 
     // create the image...
-    this.myLine4 = this.game.add.image(act4.x, act4.y, graphicsLine4.generateTexture());
+    this.myLine4 = this.game.add.image(
+      act4.x,
+      act4.y,
+      graphicsLine4.generateTexture()
+    );
     this.myLine4.visible = false;
     graphicsLine4.destroy();
 
-
-
-    //this.texto = this.game.add.text(ancho / 3, 16, '', { fill: 'black' });
-    //this.texto.text = 'Elige una actividad';
+    // this.texto = this.game.add.text(ancho / 3, 16, '', { fill: 'black' });
+    // this.texto.text = 'Elige una actividad';
 
     act1.events.onInputDown.add(this.listenerA1, this);
     act3.events.onInputDown.add(this.listenerA3, this);
@@ -173,95 +179,135 @@ class ProfesionesCruzadas extends Phaser.State {
 
   listenerA1() {
     // Colocar aqui a que actividad se dirige
-    if(this.indicador == "A1"){
+    if (this.indicador === 'A1') {
       this.myLine.visible = true;
     }
-    this.indicador = "A";
-    if(this.myLine.visible && this.myLine2.visible && this.myLine3.visible && this.myLine4.visible){
+    this.indicador = 'A';
+    if (
+      this.myLine.visible &&
+      this.myLine2.visible &&
+      this.myLine3.visible &&
+      this.myLine4.visible
+    ) {
       setTimeout(() => {
-      this.game.state.start('EligeActividad');
-    }, 3000);
+        this.game.state.start('EligeActividad');
+      }, 3000);
     }
   }
 
   listenerA3() {
     // Colocar aqui a que actividad se dirige
-    if(this.indicador == "A"){
+    if (this.indicador === 'A') {
       this.myLine.visible = true;
     }
-    this.indicador = "A1";
-    if(this.myLine.visible && this.myLine2.visible && this.myLine3.visible && this.myLine4.visible){
+    this.indicador = 'A1';
+    if (
+      this.myLine.visible &&
+      this.myLine2.visible &&
+      this.myLine3.visible &&
+      this.myLine4.visible
+    ) {
       setTimeout(() => {
-      this.game.state.start('EligeActividad');
-    }, 3000);
+        this.game.state.start('EligeActividad');
+      }, 3000);
     }
   }
   listenerA4() {
-    if(this.indicador == "B1"){
+    if (this.indicador === 'B1') {
       this.myLine2.visible = true;
     }
-    this.indicador = "B";
-    if(this.myLine.visible && this.myLine2.visible && this.myLine3.visible && this.myLine4.visible){
+    this.indicador = 'B';
+    if (
+      this.myLine.visible &&
+      this.myLine2.visible &&
+      this.myLine3.visible &&
+      this.myLine4.visible
+    ) {
       setTimeout(() => {
-      this.game.state.start('EligeActividad');
-    }, 3000);
+        this.game.state.start('EligeActividad');
+      }, 3000);
     }
   }
   listenerA5() {
-    if(this.indicador == "D1"){
+    if (this.indicador === 'D1') {
       this.myLine4.visible = true;
     }
-    this.indicador = "D";
-    if(this.myLine.visible && this.myLine2.visible && this.myLine3.visible && this.myLine4.visible){
+    this.indicador = 'D';
+    if (
+      this.myLine.visible &&
+      this.myLine2.visible &&
+      this.myLine3.visible &&
+      this.myLine4.visible
+    ) {
       setTimeout(() => {
-      this.game.state.start('EligeActividad');
-    }, 3000);
+        this.game.state.start('EligeActividad');
+      }, 3000);
     }
   }
   listenerA6() {
     // Colocar aqui a que actividad se dirige
-    if(this.indicador == "C1"){
+    if (this.indicador === 'C1') {
       this.myLine3.visible = true;
     }
-    this.indicador = "C";
-    if(this.myLine.visible && this.myLine2.visible && this.myLine3.visible && this.myLine4.visible){
+    this.indicador = 'C';
+    if (
+      this.myLine.visible &&
+      this.myLine2.visible &&
+      this.myLine3.visible &&
+      this.myLine4.visible
+    ) {
       setTimeout(() => {
-      this.game.state.start('EligeActividad');
-    }, 3000);
+        this.game.state.start('EligeActividad');
+      }, 3000);
     }
   }
   listenerA7() {
-    if(this.indicador == "B"){
+    if (this.indicador === 'B') {
       this.myLine2.visible = true;
     }
-    this.indicador = "B1";
-    if(this.myLine.visible && this.myLine2.visible && this.myLine3.visible && this.myLine4.visible){
+    this.indicador = 'B1';
+    if (
+      this.myLine.visible &&
+      this.myLine2.visible &&
+      this.myLine3.visible &&
+      this.myLine4.visible
+    ) {
       setTimeout(() => {
-      this.game.state.start('EligeActividad');
-    }, 3000);
+        this.game.state.start('EligeActividad');
+      }, 3000);
     }
   }
   listenerA8() {
     // Colocar aqui a que actividad se dirige
-    if(this.indicador == "D"){
+    if (this.indicador === 'D') {
       this.myLine4.visible = true;
     }
-    this.indicador = "D1";
-    if(this.myLine.visible && this.myLine2.visible && this.myLine3.visible && this.myLine4.visible){
+    this.indicador = 'D1';
+    if (
+      this.myLine.visible &&
+      this.myLine2.visible &&
+      this.myLine3.visible &&
+      this.myLine4.visible
+    ) {
       setTimeout(() => {
-      this.game.state.start('EligeActividad');
-    }, 3000);
+        this.game.state.start('EligeActividad');
+      }, 3000);
     }
   }
   listenerA9() {
-    if(this.indicador == "C"){
+    if (this.indicador === 'C') {
       this.myLine3.visible = true;
     }
-    this.indicador = "C1";
-    if(this.myLine.visible && this.myLine2.visible && this.myLine3.visible && this.myLine4.visible){
+    this.indicador = 'C1';
+    if (
+      this.myLine.visible &&
+      this.myLine2.visible &&
+      this.myLine3.visible &&
+      this.myLine4.visible
+    ) {
       setTimeout(() => {
-      this.game.state.start('EligeActividad');
-    }, 3000);
+        this.game.state.start('EligeActividad');
+      }, 3000);
     }
   }
 }
