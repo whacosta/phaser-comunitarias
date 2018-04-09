@@ -31,6 +31,7 @@ import EligeCaracteristicas from './EligeCaracteristicas.ts';
 import Memoria from './Memoria.js';
 import CompletarAflatoun2 from './CompletarAflatoun2';
 import ComoMeAlimento from './ComoMeAlimento';
+import ProfesionesCruzadas from './ProfesionesCruzadas.ts';
 
 class EligeActividad extends Phaser.State {
   preload() {
@@ -125,8 +126,8 @@ class EligeActividad extends Phaser.State {
   }
   listenerA5() {
     // Colocar aqui a que actividad se dirige
-    this.game.state.add('ProfesionesPintables', ProfesionesPintables);
-    this.game.state.start('ProfesionesPintables');
+    this.game.state.add('ProfesionesCruzadas', ProfesionesCruzadas);
+    this.game.state.start('ProfesionesCruzadas');
   }
   listenerA6() {
     // Colocar aqui a que actividad se dirige
