@@ -3,7 +3,7 @@ import ConflictoStage02 from './ConflictoStage02.ts';
 
 class ConflictoStage01 extends Phaser.State {
   create() {
-    console.log('Iniciando');
+    //console.log('Iniciando');
     const afla = this.game.add.sprite(207, alto / 2 - 120, 'aflautonAct1_5');
     afla.anchor.setTo(0.5, 0.5);
     afla.scale.setTo(0.5, 0.5);
@@ -42,7 +42,7 @@ class ConflictoStage01 extends Phaser.State {
   }
 
   btnNextAction() {
-    console.log('next boton');
+    //console.log('next boton');
     this.game.state.add('escena2', new ConflictoStage02());
     this.game.state.start('escena2');
   }

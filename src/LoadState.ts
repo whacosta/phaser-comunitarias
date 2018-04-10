@@ -101,7 +101,6 @@ class LoadState extends Phaser.State {
     this.game.load.image('tienda', tiendaMenuNav);
     this.game.load.image('chat', chatMenuNav);
 
-    //Actividad 1.5 de Wilmer
     this.game.load.image('aflautonAct1_5', aflautonAct1_5);
     this.game.load.image('nextAct1_5', nextAct1_5);
     this.game.load.image('conflicto1', conflicto1);
@@ -110,7 +109,6 @@ class LoadState extends Phaser.State {
     this.game.load.image('conflicto4', conflicto1);
     this.game.load.image('conflicto5', conflicto1);
     this.game.load.spritesheet('balls', balls, 17, 17);
-    //Actividad 1.5 de Wilmer
   }
 
   create() {

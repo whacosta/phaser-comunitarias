@@ -41,6 +41,8 @@ let opcion2;
 class ConflictoStage03 extends Phaser.State {
   create() {
     this.game.physics.startSystem(Phaser.Physics.ARCADE);
+    let conflicto1 = conflictos.conflicto1;
+    contador = 2;
     handle1 = this.game.add.sprite(ancho / 2, alto - 420, 'balls', 0);
     handle1.anchor.set(0.5);
 

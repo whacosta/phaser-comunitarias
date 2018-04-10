@@ -160,7 +160,6 @@ class EligeActividad extends Phaser.State {
   }
   listenerA10() {
     // Colocar aqui a que actividad se dirige
-    console.log('Click A10');
     this.game.state.add('ConflictoStage01', new ConflictoStage01());
     this.game.state.start('ConflictoStage01');
   }
