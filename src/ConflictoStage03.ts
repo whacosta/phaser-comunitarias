@@ -1,9 +1,9 @@
 import { ancho, alto } from './dimens.ts';
 import ConflictoStage04 from './ConflictoStage04.ts';
 
-var handle1;
-var handle2;
-var line1;
+let handle1;
+let handle2;
+let line1;
 
 let conflictos = {
   conflicto1: {
@@ -33,10 +33,10 @@ let conflictos = {
   },
 };
 
-var contador = 1;
-var conflicto;
-var opcion1;
-var opcion2;
+let contador = 1;
+let conflicto;
+let opcion1;
+let opcion2;
 
 class ConflictoStage03 extends Phaser.State {
   create() {
