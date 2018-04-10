@@ -32,6 +32,7 @@ import EligeCaracteristicas from './EligeCaracteristicas.ts';
 import Memoria from './Memoria.js';
 import CompletarAflatoun2 from './CompletarAflatoun2';
 import ComoMeAlimento from './ComoMeAlimento';
+import ProfesionesCruzadas from './ProfesionesCruzadas.ts';
 
 import ConflictoStage01 from './ConflictoStage01.ts';
 

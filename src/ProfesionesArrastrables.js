@@ -4,6 +4,7 @@ import monedaRuta from './assets/coin.png';
 import bubble from './assets/bubble2.mp3';
 import bubbleEnd1 from './assets/bubbleEnd1.mp3';
 import bubbleWrong from './assets/bubbleWrong.mp3';
+import ProfesionesCruzadas from './ProfesionesCruzadas.ts';
 
 function comenzarJuegoExterno() {
   var juegoStyle =
@@ -239,7 +240,11 @@ function comenzarJuegoExterno() {
     window.removeEventListener('resize', handleResize);
     document.body.removeChild(document.getElementById('contenedorJuego'));
     document.getElementsByTagName('canvas')[0].style.display = 'block';
-    ProfesionesArrastrables.game.state.start('EligeActividad');
+    ProfesionesArrastrables.game.state.add(
+      'ProfesionesCruzadas',
+      ProfesionesCruzadas
+    );
+    ProfesionesArrastrables.game.state.start('ProfesionesCruzadas');
   }
   function handleTouchStart(e) {
     e.preventDefault();
