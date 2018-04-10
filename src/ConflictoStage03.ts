@@ -5,7 +5,7 @@ let handle1;
 let handle2;
 let line1;
 
-let conflictos = {
+const conflictos = {
   conflicto1: {
     imagen: 'conflicto1',
     causa: 'Los dos quieren jugar \ncon el mismo juguete',
@@ -41,7 +41,7 @@ let opcion2;
 class ConflictoStage03 extends Phaser.State {
   create() {
     this.game.physics.startSystem(Phaser.Physics.ARCADE);
-    let conflicto1 = conflictos.conflicto1;
+    const conflicto1 = conflictos.conflicto1;
     contador = 2;
     handle1 = this.game.add.sprite(ancho / 2, alto - 420, 'balls', 0);
     handle1.anchor.set(0.5);

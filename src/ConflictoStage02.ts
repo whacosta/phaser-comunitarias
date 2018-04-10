@@ -32,7 +32,6 @@ class ConflictoStage02 extends Phaser.State {
   }
 
   btnPlayAction() {
-    //console.log('play boton');
     this.game.state.add('escena3', new ConflictoStage03());
     this.game.state.start('escena3');
   }
