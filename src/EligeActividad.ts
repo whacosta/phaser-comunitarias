@@ -126,8 +126,8 @@ class EligeActividad extends Phaser.State {
   }
   listenerA5() {
     // Colocar aqui a que actividad se dirige
-    this.game.state.add('ProfesionesCruzadas', ProfesionesCruzadas);
-    this.game.state.start('ProfesionesCruzadas');
+    this.game.state.add('ProfesionesPintables', ProfesionesPintables);
+    this.game.state.start('ProfesionesPintables');
   }
   listenerA6() {
     // Colocar aqui a que actividad se dirige
