@@ -31,6 +31,7 @@ import EligeCaracteristicas from './EligeCaracteristicas.ts';
 import Memoria from './Memoria.js';
 import CompletarAflatoun2 from './CompletarAflatoun2';
 import ComoMeAlimento from './ComoMeAlimento';
+import ProfesionesCruzadas from './ProfesionesCruzadas.ts';
 
 class EligeActividad extends Phaser.State {
   preload() {
