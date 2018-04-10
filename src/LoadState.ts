@@ -40,6 +40,15 @@ import cofreMenuNav from './assets/cofre.png';
 import tiendaMenuNav from './assets/tienda.png';
 import chatMenuNav from './assets/msn.png';
 
+import aflautonAct1_5 from './assets/aflauton-dude.png';
+import nextAct1_5 from './assets/siguiente.png';
+import conflicto1 from './assets/conflicto1.png';
+import conflicto2 from './assets/conflicto2.png';
+import conflicto3 from './assets/conflicto3.png';
+import conflicto4 from './assets/conflicto4.png';
+import conflicto5 from './assets/conflicto5.png';
+import balls from './assets/balls.png';
+
 class LoadState extends Phaser.State {
   preload() {
     const loadingBar = this.add.sprite(ancho / 2, alto / 2, 'loading');
@@ -91,6 +100,17 @@ class LoadState extends Phaser.State {
     this.game.load.image('cofre', cofreMenuNav);
     this.game.load.image('tienda', tiendaMenuNav);
     this.game.load.image('chat', chatMenuNav);
+
+    //Actividad 1.5 de Wilmer
+    this.game.load.image('aflautonAct1_5', aflautonAct1_5);
+    this.game.load.image('nextAct1_5', nextAct1_5);
+    this.game.load.image('conflicto1', conflicto1);
+    this.game.load.image('conflicto2', conflicto1);
+    this.game.load.image('conflicto3', conflicto1);
+    this.game.load.image('conflicto4', conflicto1);
+    this.game.load.image('conflicto5', conflicto1);
+    this.game.load.spritesheet('balls', balls, 17, 17);
+    //Actividad 1.5 de Wilmer
   }
 
   create() {

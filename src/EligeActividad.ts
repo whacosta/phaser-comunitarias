@@ -13,6 +13,7 @@ import act6path from './assets/caracteristicas.png';
 import act7path from './assets/memoria.png';
 import act8path from './assets/valores.png';
 import act9path from './assets/alimentacion.png';
+import act10path from './assets/conflictos.png';
 
 import BootState from './BootState.ts';
 import VideoState from './VideoState.ts';
@@ -32,6 +33,8 @@ import Memoria from './Memoria.js';
 import CompletarAflatoun2 from './CompletarAflatoun2';
 import ComoMeAlimento from './ComoMeAlimento';
 
+import ConflictoStage01 from './ConflictoStage01.ts';
+
 class EligeActividad extends Phaser.State {
   preload() {
     this.game.load.image('fondo', ImagenFondo);
@@ -44,6 +47,7 @@ class EligeActividad extends Phaser.State {
     this.game.load.image('act7', act7path);
     this.game.load.image('act8', act8path);
     this.game.load.image('act9', act9path);
+    this.game.load.image('act10', act10path);
   }
 
   private texto;
@@ -58,6 +62,7 @@ class EligeActividad extends Phaser.State {
     let act7;
     let act8;
     let act9;
+    let act10;
 
     setBackground(this.game);
 
@@ -88,6 +93,9 @@ class EligeActividad extends Phaser.State {
     act9 = this.game.add.image(ancho * 7 / 10, alto * 8 / 10, 'act9');
     act9.inputEnabled = true;
 
+    act10 = this.game.add.image(ancho * 9 / 10, alto * 2 / 10, 'act10');
+    act10.inputEnabled = true;
+
     this.texto = this.game.add.text(ancho / 3, 16, '', { fill: 'black' });
     this.texto.text = 'Elige una actividad';
 
@@ -100,6 +108,7 @@ class EligeActividad extends Phaser.State {
     act7.events.onInputDown.add(this.listenerA7, this);
     act8.events.onInputDown.add(this.listenerA8, this);
     act9.events.onInputDown.add(this.listenerA9, this);
+    act10.events.onInputDown.add(this.listenerA10, this);
   }
 
   listenerA1() {
@@ -147,6 +156,12 @@ class EligeActividad extends Phaser.State {
     // Colocar aqui a que actividad se dirige
     this.game.state.add('ComoMeAlimento', ComoMeAlimento);
     this.game.state.start('ComoMeAlimento');
+  }
+  listenerA10() {
+    // Colocar aqui a que actividad se dirige
+    console.log('Click A10');
+    this.game.state.add('ConflictoStage01', new ConflictoStage01());
+    this.game.state.start('ConflictoStage01');
   }
 }
 export default EligeActividad;
